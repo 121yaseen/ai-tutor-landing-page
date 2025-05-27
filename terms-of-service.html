@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - AI Tutor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to your main stylesheet -->
+    <style>
+        body {
+            padding-top: 100px; /* Account for fixed header if you reuse it */
+        }
+        .legal-content-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-large);
+        }
+        .legal-content-container h1 {
+            color: var(--color-text-headings);
+            margin-bottom: 1em;
+        }
+        .legal-content-container h2 {
+            color: var(--color-text-headings);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        .legal-content-container p,
+        .legal-content-container ul {
+            color: var(--color-text-secondary);
+            margin-bottom: 1em;
+        }
+        .legal-content-container ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        .legal-content-container a {
+            color: var(--color-accent);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Optional: You can reuse your main site header here -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"> <!-- Link back to home -->
+                    <img src="assets/icons/graduation-cap.svg" alt="EduAI Graduation Cap Icon" class="logo-icon">
+                    Edu<strong>AI</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container legal-content-container">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+        <h1>Terms of Service</h1>
+        <p><strong>Last Updated: <span id="currentDate"></span></strong></p>
+
+        <p>Welcome to EduAI! These Terms of Service ("Terms") govern your use of our website pistah.live and the services offered by EduAI ("we," "us," or "our"). By accessing or using our Site and services, you agree to be bound by these Terms.</p>
+        
+        <p><strong>This is placeholder text. You MUST replace this with a comprehensive and legally compliant Terms of Service agreement tailored to your specific services and business model. Consult with a legal professional.</strong></p>
+
+        <h2>1. USE OF OUR SERVICES</h2>
+        <p>You agree to use our services only for lawful purposes and in accordance with these Terms. You are responsible for ensuring that your use of the services complies with all applicable laws, regulations, and rights of others.</p>
+        <ul>
+            <li><strong>Account Registration:</strong> To access certain features, you may be required to register for an account (e.g., joining the waitlist). You agree to provide accurate, current, and complete information during the registration process.</li>
+            <li><strong>Prohibited Conduct:</strong> You agree not to engage in any of the following prohibited activities: [List prohibited activities, e.g., copying materials, interfering with the service, etc.]</li>
+        </ul>
+
+        <h2>2. INTELLECTUAL PROPERTY</h2>
+        <p>The Site and its original content, features, and functionality are and will remain the exclusive property of EduAI and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of EduAI.</p>
+
+        <h2>3. WAITLIST AND FUTURE SERVICES</h2>
+        <p>By joining our waitlist, you express interest in our upcoming services. We do not guarantee a spot or access to future services by joining the waitlist. Any descriptions of future services are preliminary and subject to change.</p>
+
+        <h2>4. DISCLAIMERS</h2>
+        <p>Our services are provided "AS IS" and "AS AVAILABLE" without any warranties of any kind, express or implied. We do not warrant that the services will be uninterrupted, timely, secure, or error-free.</p>
+        
+        <h2>5. LIMITATION OF LIABILITY</h2>
+        <p>In no event shall EduAI, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the service.</p>
+
+        <h2>6. GOVERNING LAW</h2>
+        <p>These Terms shall be governed and construed in accordance with the laws of [Your Jurisdiction, e.g., State of California, USA], without regard to its conflict of law provisions.</p>
+        
+        <h2>7. CHANGES TO TERMS</h2>
+        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least [e.g., 30] days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+
+        <h2>8. CONTACT US</h2>
+        <p>If you have any questions about these Terms, please contact us at:</p>
+        <p>EduAI<br>
+        help@pistah.live<br></p>
+    </div>
+
+    <!-- Optional: You can reuse your main site footer here -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear"></span> EduAI. All rights reserved. </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Basic theme persistence for standalone pages (optional)
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+</body>
+</html> 

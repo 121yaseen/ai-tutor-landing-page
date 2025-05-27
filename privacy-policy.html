@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - AI Tutor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to your main stylesheet -->
+    <style>
+        body {
+            padding-top: 100px; /* Account for fixed header if you reuse it */
+        }
+        .legal-content-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-large);
+        }
+        .legal-content-container h1 {
+            color: var(--color-text-headings);
+            margin-bottom: 1em;
+        }
+        .legal-content-container h2 {
+            color: var(--color-text-headings);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        .legal-content-container p,
+        .legal-content-container ul {
+            color: var(--color-text-secondary);
+            margin-bottom: 1em;
+        }
+        .legal-content-container ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        .legal-content-container a {
+            color: var(--color-accent);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Optional: You can reuse your main site header here -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"> <!-- Link back to home -->
+                    <img src="assets/icons/graduation-cap.svg" alt="EduAI Graduation Cap Icon" class="logo-icon">
+                    Edu<strong>AI</strong>
+                </a>
+            </div>
+            <!-- No nav links needed for simple policy pages, or keep them if desired -->
+        </div>
+    </header>
+
+    <div class="container legal-content-container">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+        <h1>Privacy Policy</h1>
+        <p><strong>Last Updated: <span id="currentDate"></span></strong></p>
+
+        <p>This is a SAMPLE Privacy Policy page for EduAI ("we," "us," or "our"). This sample policy outlines how we might collect, use, disclose, and safeguard your information when you visit our website pistah.live and use our services. Please read this privacy policy carefully. IF YOU DO NOT AGREE WITH THE TERMS OF THIS PRIVACY POLICY, PLEASE DO NOT ACCESS THE SITE.</p>
+        
+        <p><strong>This is placeholder text. You MUST replace this with a comprehensive and legally compliant Privacy Policy tailored to your specific data handling practices and applicable regulations (e.g., GDPR, CCPA, etc.). Consult with a legal professional.</strong></p>
+
+        <h2>1. COLLECTION OF YOUR INFORMATION</h2>
+        <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
+        <ul>
+            <li><strong>Personal Data:</strong> Personally identifiable information, such as your name, email address, and demographic information, that you voluntarily give to us when you register for the waitlist or when you choose to participate in various activities related to the Site.</li>
+            <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.</li>
+            <li><strong>Data From Third Parties:</strong> [Specify if you collect data from third parties]</li>
+        </ul>
+
+        <h2>2. USE OF YOUR INFORMATION</h2>
+        <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:</p>
+        <ul>
+            <li>Manage your waitlist membership.</li>
+            <li>Email you regarding your account or order.</li>
+            <li>Notify you of updates to the Site and our services.</li>
+            <li>[Add other uses specific to your service]</li>
+        </ul>
+
+        <h2>3. DISCLOSURE OF YOUR INFORMATION</h2>
+        <p>We may share information we have collected about you in certain situations. Your information may be disclosed as follows:</p>
+        <ul>
+            <li><strong>By Law or to Protect Rights:</strong> If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.</li>
+            <li><strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.</li>
+            <li>[Add other disclosure scenarios]</li>
+        </ul>
+        
+        <h2>4. SECURITY OF YOUR INFORMATION</h2>
+        <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
+
+        <h2>5. POLICY FOR CHILDREN</h2>
+        <p>We do not knowingly solicit information from or market to children under the age of 13 (or other age as required by local law). If you become aware of any data we have collected from children under age 13, please contact us using the contact information provided below.</p>
+        
+        <h2>6. CONTACT US</h2>
+        <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
+        <p>EduAI<br>
+        help@pistah.live<br></p>
+    </div>
+
+    <!-- Optional: You can reuse your main site footer here -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear"></span> EduAI. All rights reserved. </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Basic theme persistence for standalone pages (optional)
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    </script>
+</body>
+</html> 
