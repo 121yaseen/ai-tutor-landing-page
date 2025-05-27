@@ -185,11 +185,19 @@ section {
 }
 
 .logo-icon {
-    width: 24px; 
-    height: 24px;
-    margin-right: 8px;
-    filter: var(--color-logo-icon-filter);
-    transition: filter var(--transition-speed);
+    width: 36px; /* Increased from 32px */
+    height: 36px; /* Increased from 32px */
+    margin-right: 10px;
+    vertical-align: middle;
+    /* The filter below was to make the SVG white. May need adjustment or removal for PNG. */
+    /* filter: invert(89%) sepia(5%) saturate(10000%) hue-rotate(200deg) brightness(105%) contrast(101%); */
+    /* A more generic filter for dark theme if the icon is dark on transparent bg */
+    /* filter: var(--logo-icon-filter); */ 
+}
+
+/* Light theme specific filter for logo icon if needed */
+.light-theme .logo-icon {
+    /* filter: var(--logo-icon-filter-light); */
 }
 
 .main-nav {
