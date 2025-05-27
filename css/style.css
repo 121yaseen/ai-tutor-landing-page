@@ -5,26 +5,54 @@
 :root {
     --font-primary: 'Space Grotesk', sans-serif;
 
-    /* Dark Theme Palette (Inspired by futuristic & huly.io) */
-    --color-bg: #0a0f1f; /* Deep space blue / very dark navy */
-    --color-bg-secondary: #101729; /* Slightly lighter for cards/sections */
-    --color-surface: #182038; /* Cards, form inputs */
-    --color-border: #2a3657; /* Borders, dividers */
-
-    --color-text-primary: #e0e0e0; /* Light grey for primary text */
-    --color-text-secondary: #a0a0b8; /* Muted grey for secondary text */
-    --color-text-headings: #ffffff; /* White for main headings */
-
-    --color-accent: #00f5d4; /* Striking neon-like teal/cyan */
-    --color-accent-hover: #00e0c0;
-    --color-accent-glow: rgba(0, 245, 212, 0.3);
-
-    --color-purple-accent: #7b00f5; /* Optional secondary accent */
-
+    /* Common Variables */
     --container-width: 1140px;
     --border-radius-base: 8px;
     --border-radius-large: 12px;
     --transition-speed: 0.3s ease;
+
+    /* Default Dark Theme Palette */
+    --color-bg: #0a0f1f; /* Deep space blue / very dark navy */
+    --color-bg-secondary: #101729; /* Slightly lighter for cards/sections */
+    --color-surface: #182038; /* Cards, form inputs */
+    --color-border: #2a3657; /* Borders, dividers */
+    --color-text-primary: #e0e0e0; /* Light grey for primary text */
+    --color-text-secondary: #a0a0b8; /* Muted grey for secondary text */
+    --color-text-headings: #ffffff; /* White for main headings */
+    --color-accent: #00f5d4; /* Striking neon-like teal/cyan */
+    --color-accent-hover: #00e0c0;
+    --color-accent-glow: rgba(0, 245, 212, 0.3);
+    --color-button-primary-bg: #4A80FF; /* Blue for header CTA */
+    --color-button-primary-text: #ffffff;
+    --color-button-primary-hover-bg: #3A6EDB;
+    --color-logo-icon-filter: invert(90%) sepia(10%) saturate(100%) hue-rotate(180deg) brightness(150%) contrast(90%); /* To make dark icons whitish */
+    --hero-overlay-gradient: linear-gradient(180deg, rgba(10, 15, 31, 0.7) 0%, rgba(10, 15, 31, 0.95) 100%);
+    --input-bg: var(--color-bg);
+    --shadow-card: 0 15px 30px rgba(0, 0, 0, 0.2);
+    --shadow-button-cta: 0 10px 20px var(--color-accent-glow);
+    --shadow-input-focus: 0 0 0 3px var(--color-accent-glow);
+}
+
+body.light-theme {
+    --color-bg: #f4f7fc; /* Light greyish blue */
+    --color-bg-secondary: #ffffff; /* White */
+    --color-surface: #ffffff; /* White for cards */
+    --color-border: #dde3ea; /* Light grey border */
+    --color-text-primary: #334155; /* Darker grey for text (Tailwind slate-700) */
+    --color-text-secondary: #64748b; /* Medium grey (Tailwind slate-500) */
+    --color-text-headings: #0f172a; /* Near black for headings (Tailwind slate-900) */
+    --color-accent: #007bff; /* A standard blue for light theme accent */
+    --color-accent-hover: #0056b3;
+    --color-accent-glow: rgba(0, 123, 255, 0.2);
+    --color-button-primary-bg: #007bff;
+    --color-button-primary-text: #ffffff;
+    --color-button-primary-hover-bg: #0056b3;
+    --color-logo-icon-filter: none; /* No filter needed if icons are dark by default */
+    --hero-overlay-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(244, 247, 252, 0.5) 100%);
+    --input-bg: #e9ecef; /* Light input background */
+    --shadow-card: 0 15px 30px rgba(0, 0, 0, 0.1);
+    --shadow-button-cta: 0 10px 20px var(--color-accent-glow);
+    --shadow-input-focus: 0 0 0 3px var(--color-accent-glow);
 }
 
 /* 1. Reset & Base Styles
@@ -50,6 +78,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden; /* Prevent horizontal scroll */
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 a {
@@ -68,30 +97,32 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-headings);
     margin-bottom: 0.75em;
     line-height: 1.2;
-    font-weight: 500; /* Default medium weight for Space Grotesk */
+    font-weight: 500; 
+    transition: color var(--transition-speed);
 }
 
 h1 {
-    font-size: 3.052rem; /* ~48.8px */
+    font-size: 3.052rem; 
     font-weight: 700;
 }
 
 h2 {
-    font-size: 2.441rem; /* ~39px */
+    font-size: 2.441rem; 
     font-weight: 600;
 }
 
 h3 {
-    font-size: 1.953rem; /* ~31px */
+    font-size: 1.953rem; 
 }
 
 h4 {
-    font-size: 1.563rem; /* ~25px */
+    font-size: 1.563rem; 
 }
 
 p {
     margin-bottom: 1.25em;
     color: var(--color-text-secondary);
+    transition: color var(--transition-speed);
 }
 
 img {
@@ -123,22 +154,16 @@ section {
 /* 3. Header & Navigation
 -------------------------------------------------------------- */
 .site-header {
-    padding: 15px 0; /* Adjusted padding */
-    background-color: var(--color-bg); /* Solid dark background to match image */
+    padding: 15px 0;
+    background-color: var(--color-bg); 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     transition: background-color var(--transition-speed);
-    border-bottom: 1px solid var(--color-border); /* Subtle bottom border */
+    border-bottom: 1px solid var(--color-border);
 }
-
-/* Optional: Add a class on scroll with JS if needed for different scrolled background */
-/* .site-header.scrolled {
-    background-color: rgba(10, 15, 31, 0.8); 
-    backdrop-filter: blur(10px);
-} */
 
 .site-header .container {
     display: flex;
@@ -147,37 +172,34 @@ section {
 }
 
 .logo a {
-    display: flex; /* For aligning icon and text */
+    display: flex; 
     align-items: center;
-    font-size: 1.6rem; /* Adjusted size */
-    font-weight: 500; /* Slightly less bold for 'Edu' */
+    font-size: 1.6rem; 
+    font-weight: 500; 
     color: var(--color-text-headings);
-    letter-spacing: 0.5px; /* Adjusted spacing */
+    letter-spacing: 0.5px; 
 }
 
 .logo a strong {
-    font-weight: 700; /* Bolder for 'AI' */
+    font-weight: 700; 
 }
 
 .logo-icon {
-    width: 24px; /* Adjust as needed */
+    width: 24px; 
     height: 24px;
     margin-right: 8px;
-    /* Assuming the SVG flag icon is white or a light color by default. 
-       If it's dark and needs to be white, you might need to edit the SVG 
-       or use CSS filters if it's a single-color icon. 
-       For Lucide SVGs used as <img>, color is usually set in the SVG itself. */
-    filter: invert(90%) sepia(10%) saturate(100%) hue-rotate(180deg) brightness(150%) contrast(90%); /* Attempt to make it whitish if it's black */
+    filter: var(--color-logo-icon-filter);
+    transition: filter var(--transition-speed);
 }
 
 .main-nav {
-    display: flex; /* Align nav items */
+    display: flex; 
     align-items: center;
 }
 
 .main-nav a {
-    color: var(--color-text-secondary); /* Softer color for nav links */
-    margin-left: 30px; /* Spacing between links */
+    color: var(--color-text-secondary); 
+    margin-left: 30px; 
     font-weight: 500;
     font-size: 0.95rem;
     transition: color var(--transition-speed);
@@ -185,44 +207,80 @@ section {
 
 .main-nav a:hover,
 .main-nav a:focus {
-    color: var(--color-text-primary); /* Brighter on hover */
+    color: var(--color-text-primary); 
 }
 
 .header-cta {
-    margin-left: 30px; /* Space from nav links */
-    background-color: #4A80FF; /* Blue color from image */
-    color: #ffffff; /* White text */
-    padding: 10px 20px; /* Adjusted padding */
+    margin-left: 30px; 
+    background-color: var(--color-button-primary-bg); 
+    color: var(--color-button-primary-text);
+    padding: 10px 20px; 
     font-size: 0.9rem;
     font-weight: 600;
     border-radius: var(--border-radius-base);
+    transition: background-color var(--transition-speed), color var(--transition-speed), box-shadow var(--transition-speed), transform var(--transition-speed);
 }
 
 .header-cta:hover,
 .header-cta:focus {
-    background-color: #3A6EDB; /* Slightly darker blue on hover */
-    box-shadow: 0 5px 15px rgba(74, 128, 255, 0.3);
+    background-color: var(--color-button-primary-hover-bg);
+    box-shadow: 0 5px 15px var(--color-accent-glow); /* Use accent glow for consistency or make a button specific shadow variable */
     transform: translateY(-1px);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust as needed for space between CTA and switcher */
+}
+
+/* Theme Switcher Button */
+#theme-switcher {
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    padding: 8px;
+    border-radius: var(--border-radius-base);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-speed), border-color var(--transition-speed);
+}
+
+#theme-switcher:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+}
+
+#theme-switcher .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+#theme-switcher .icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
 }
 
 /* 4. Hero Section
 -------------------------------------------------------------- */
 .hero-section {
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative; /* For pseudo-element positioning */
-    padding-top: 120px; /* Account for fixed header */
+    position: relative; 
+    padding-top: 120px; 
     padding-bottom: 60px;
-    /* background-image: url('../assets/images/hero-background.svg'); -- Removed */
-    /* background-size: contain; -- Removed */
-    /* background-position: center center; -- Removed */
-    /* background-repeat: no-repeat; -- Removed */
 }
 
-.hero-section::before { /* For the SVG background */
+.hero-section::before { 
     content: "";
     position: absolute;
     top: 0;
@@ -233,8 +291,14 @@ section {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    filter: invert(1); /* Inverts the SVG colors */
-    z-index: 0; /* Behind overlay and content */
+    filter: invert(1); 
+    z-index: 0; 
+    transition: opacity var(--transition-speed); /* For potentially hiding/showing */
+}
+
+/* Hide ::before if no background image is set to avoid applying filter to nothing */
+body:not([data-hero-bg-enabled="true"]) .hero-section::before {
+    opacity: 0;
 }
 
 .hero-background-overlay {
@@ -243,19 +307,20 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(10, 15, 31, 0.7) 0%, rgba(10, 15, 31, 0.95) 100%);
-    z-index: 1; /* Above the inverted SVG background */
+    background: var(--hero-overlay-gradient);
+    z-index: 1; 
+    transition: background var(--transition-speed);
 }
 
 .hero-section .container {
-    position: relative; /* Ensure this is maintained for z-index stacking */
-    z-index: 2; /* Above the overlay */
+    position: relative; 
+    z-index: 2; 
 }
 
 .hero-section h1 {
     color: var(--color-text-headings);
     margin-bottom: 0.5em;
-    max-width: 800px; /* Constrain width for better readability */
+    max-width: 800px; 
     margin-left: auto;
     margin-right: auto;
 }
@@ -269,19 +334,19 @@ section {
     margin-right: auto;
 }
 
-/* 5. Buttons (shadcn/ui inspired)
+/* 5. Buttons (Global CTA style)
 -------------------------------------------------------------- */
 .cta-button {
     display: inline-block;
     background-color: var(--color-accent);
-    color: var(--color-bg);
+    color: var(--color-bg); /* Text color that contrasts with accent */
     padding: 14px 32px;
     font-family: var(--font-primary);
     font-size: 1rem;
     font-weight: 600;
     border-radius: var(--border-radius-base);
     text-align: center;
-    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
     border: 2px solid transparent;
     cursor: pointer;
 }
@@ -291,21 +356,16 @@ section {
     background-color: var(--color-accent-hover);
     color: var(--color-bg);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px var(--color-accent-glow);
+    box-shadow: var(--shadow-button-cta);
 }
 
-/* Secondary/Outline button style (example) */
-.cta-button-outline {
-    background-color: transparent;
-    color: var(--color-accent);
-    border: 2px solid var(--color-accent);
+/* This rule needs to be specific enough if .header-cta has different text color logic */
+body.light-theme .cta-button {
+    color: var(--color-text-headings); /* Example: Ensure high contrast on light accent */
 }
-
-.cta-button-outline:hover,
-.cta-button-outline:focus {
-    background-color: var(--color-accent-glow);
-    color: var(--color-accent);
-    border-color: var(--color-accent-hover);
+body.light-theme .cta-button:hover,
+body.light-theme .cta-button:focus {
+    color: var(--color-text-headings);
 }
 
 /* 6. Intro Section
@@ -313,6 +373,7 @@ section {
 .intro-section {
     background-color: var(--color-bg-secondary);
     text-align: center;
+    transition: background-color var(--transition-speed);
 }
 
 .intro-section h2 {
@@ -326,7 +387,7 @@ section {
     margin-right: auto;
 }
 
-/* 7. How It Works Section (shadcn/ui Card inspired)
+/* 7. How It Works Section (Cards)
 -------------------------------------------------------------- */
 .how-it-works-section h2,
 .features-section h2,
@@ -348,31 +409,32 @@ section {
     border-radius: var(--border-radius-large);
     border: 1px solid var(--color-border);
     text-align: center;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed), border-color var(--transition-speed);
 }
 
 .step-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-card);
 }
 
 .step-icon-placeholder {
     width: 60px;
     height: 60px;
-    background-color: var(--color-accent-glow); /* Placeholder for icon */
+    background-color: var(--color-accent-glow);
     border-radius: 50%;
     margin: 0 auto 20px auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Add SVG icon styles here or use an <img> tag */
-    /* E.g., color: var(--color-accent); font-size: 24px; */
+    transition: background-color var(--transition-speed);
 }
 
 .step-icon-placeholder img {
-    width: 32px; /* Adjust size as needed */
-    height: 32px; /* Adjust size as needed */
-    /* stroke: var(--color-accent); */ /* Stroke for inline SVGs, color for img src SVGs is usually in the file or via filter */
+    width: 32px; 
+    height: 32px; 
+    /* For SVGs used as <img>, color is best controlled within SVG or sometimes with filter. 
+       If icons are single color black, filter: var(--color-logo-icon-filter) might work to make them white in dark mode
+       and filter: none in light mode. This needs testing with actual icons. */
 }
 
 .step-card h3 {
@@ -393,11 +455,11 @@ section {
     padding: 25px;
     border-radius: var(--border-radius-base);
     border: 1px solid var(--color-border);
-    transition: background-color var(--transition-speed);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
 }
 
 .feature-item:hover {
-    background-color: var(--color-bg-secondary); /* Slightly darker on hover */
+    background-color: var(--color-bg-secondary); 
 }
 
 .feature-icon-placeholder {
@@ -409,13 +471,12 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* SVG styles here */
+    transition: background-color var(--transition-speed);
 }
 
 .feature-icon-placeholder img {
-    width: 28px; /* Adjust size as needed */
-    height: 28px; /* Adjust size as needed */
-    /* stroke: var(--color-accent); */ /* Stroke for inline SVGs, color for img src SVGs is usually in the file or via filter */
+    width: 28px; 
+    height: 28px; 
 }
 
 .feature-item h4 {
@@ -428,6 +489,7 @@ section {
 -------------------------------------------------------------- */
 .exams-section {
     background-color: var(--color-bg-secondary);
+    transition: background-color var(--transition-speed);
 }
 
 .exams-list {
@@ -444,16 +506,20 @@ section {
     border-radius: var(--border-radius-base);
     border: 1px solid var(--color-border);
     font-weight: 500;
-    transition: background-color var(--transition-speed), color var(--transition-speed);
+    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
 }
 
 .exams-list li:hover {
     background-color: var(--color-accent);
-    color: var(--color-bg);
+    color: var(--color-bg); /* Or var(--color-text-headings) if accent is light */
     border-color: var(--color-accent);
 }
 
-/* 10. Waitlist Form Section (shadcn/ui Form inspired)
+body.light-theme .exams-list li:hover {
+    color: var(--color-text-headings);
+}
+
+/* 10. Waitlist Form Section
 -------------------------------------------------------------- */
 .waitlist-form {
     max-width: 600px;
@@ -462,6 +528,7 @@ section {
     padding: 40px;
     border-radius: var(--border-radius-large);
     border: 1px solid var(--color-border);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
 }
 
 .waitlist-section .sub-headline {
@@ -487,13 +554,13 @@ section {
 .form-group select {
     width: 100%;
     padding: 12px 15px;
-    background-color: var(--color-bg); /* Darker input background */
+    background-color: var(--input-bg); 
     color: var(--color-text-primary);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-base);
     font-family: var(--font-primary);
     font-size: 1rem;
-    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed), color var(--transition-speed);
 }
 
 .form-group input[type="text"]:focus,
@@ -501,16 +568,43 @@ section {
 .form-group select:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px var(--color-accent-glow);
+    box-shadow: var(--shadow-input-focus);
 }
 
 .form-group select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23a0a0b8' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E"); /* Basic dropdown arrow */
+    /* SVG arrow for select - color needs to adapt */
+    background-image: var(--select-arrow-icon);
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 16px;
 }
+
+/* Define SVG arrow with CSS variables for color */
+:root {
+    /* ... other root variables ... */
+    --select-arrow-color: var(--color-text-secondary); /* Default for dark theme */
+}
+body.light-theme {
+    /* ... other light theme variables ... */
+    --select-arrow-color: var(--color-text-secondary); /* Default for light theme */
+}
+/* Update the select-arrow-icon variable dynamically based on the current theme color */
+:root {
+    --select-arrow-svg-path: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23" + encodeURIComponent(getComputedStyle(document.documentElement).getPropertyValue('--select-arrow-color').trim().substring(1)) + "%27 viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E";
+}
+
+/* The above dynamic SVG path won't work directly in CSS. This is a placeholder for JS updated variable or simpler static SVGs. */
+/* For now, using a simple approach. You might need separate SVGs or JS to update fill color */
+
+body:not(.light-theme) .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23a0a0b8' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+body.light-theme .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
 
 .waitlist-form .cta-button {
     width: 100%;
@@ -532,6 +626,7 @@ section {
     padding: 40px 0;
     text-align: center;
     border-top: 1px solid var(--color-border);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
 }
 
 .footer-content {
@@ -560,8 +655,6 @@ section {
 .social-media-links a {
     display: inline-block;
     margin: 0 8px;
-    /* Placeholder for SVG icons */
-    /* width: 24px; height: 24px; background: var(--color-text-secondary); border-radius: 50%; */
 }
 
 /* 12. Responsive Design
@@ -574,12 +667,32 @@ section {
     .hero-section {
         padding-top: 100px;
     }
+    .site-header .container {
+        flex-wrap: wrap; /* Allow wrapping for theme switcher */
+        justify-content: space-around; /* Better for wrapping */
+    }
+    .main-nav {
+        order: 3; /* Nav below logo and switcher on small screens */
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .main-nav a {
+        margin: 0 15px;
+    }
+    .header-cta {
+        order: 2;
+    }
+    #theme-switcher {
+        order: 1;
+        margin-bottom: 10px; /* if header wraps */
+    }
 }
 
 @media (max-width: 768px) {
     .steps-container,
     .features-grid {
-        grid-template-columns: 1fr; /* Stack on smaller screens */
+        grid-template-columns: 1fr; 
     }
 
     .site-header .container {
@@ -592,6 +705,11 @@ section {
 
     .main-nav a {
         margin: 0 10px;
+    }
+    .main-nav, .header-cta, #theme-switcher {
+        order: 0; /* Reset order for column layout */
+        margin-left: 0; margin-right: 0;
+        margin-bottom: 10px;
     }
 
     .hero-section h1 {
@@ -636,11 +754,8 @@ section {
 }
 
 /* TODO:
-- Add actual background image for hero.
-- Add SVG icons for steps & features.
-- Refine animations and micro-interactions.
-- More detailed responsive testing and adjustments.
-- Consider adding subtle gradient accents or glowing effects for a more futuristic feel.
-- Implement a smooth scroll for header links if not handled by default.
-- JavaScript for header scroll effect if desired.
+- Add SVG icons for theme switcher (sun/moon).
+- Refine icon colors for light/dark themes (may need SVG edits or different filter approaches).
+- Test select dropdown arrow theming thoroughly.
+- Hero background image needs to be re-enabled with data-attribute or JS logic if used.
 */ 

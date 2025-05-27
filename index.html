@@ -26,7 +26,12 @@
                 <a href="#features">Features</a>
                 <a href="#exams">Exams Covered</a>
             </nav>
-            <a href="#waitlist" class="cta-button header-cta">Join the Waitlist</a>
+            <div class="header-actions">
+                <a href="#waitlist" class="cta-button header-cta">Join the Waitlist</a>
+                <button id="theme-switcher" aria-label="Toggle theme">
+                    <span class="icon"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -207,6 +212,58 @@
     <script>
         // Simple script to set the current year in the footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Theme Switcher Logic
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const body = document.body;
+        const themeIcon = themeSwitcher.querySelector('.icon');
+
+        const sunIconSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+        const moonIconSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+
+        // Function to set theme and icon
+        function setTheme(isLightTheme) {
+            body.classList.toggle('light-theme', isLightTheme);
+            themeSwitcher.setAttribute('aria-pressed', String(isLightTheme));
+            if (themeIcon) {
+                themeIcon.innerHTML = isLightTheme ? moonIconSVG : sunIconSVG;
+            }
+            localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        let isLight = savedTheme === 'light';
+
+        // If no saved theme, check system preference
+        if (savedTheme === null) {
+            isLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        }
+
+        // Apply initial theme
+        setTheme(isLight);
+
+        themeSwitcher.addEventListener('click', () => {
+            isLight = !isLight;
+            setTheme(isLight);
+        });
+
+        // Optional: Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+            // Only update if no manual preference is set or if the current matches system
+            const currentStoredTheme = localStorage.getItem('theme');
+            if (currentStoredTheme === null || 
+                (currentStoredTheme === 'light' && !e.matches) || 
+                (currentStoredTheme === 'dark' && e.matches)) {
+                // More robust check: only auto-switch if there was no explicit user choice
+                // For simplicity here, we'll just re-evaluate if no theme is stored
+                if (localStorage.getItem('theme') === null) { 
+                    isLight = e.matches;
+                    setTheme(isLight);
+                }
+            }
+        });
+
     </script>
 </body>
 </html> 
