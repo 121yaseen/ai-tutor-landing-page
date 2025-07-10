@@ -80,25 +80,33 @@ export default function Features() {
 
       {/* Animated particles */}
       <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-white/20 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
+        {[...Array(20)].map((_, i) => {
+          // Use deterministic positioning based on index to avoid hydration mismatch
+          const left = (i * 17.3 + 23) % 100
+          const top = (i * 23.7 + 47) % 100
+          const duration = 3 + (i % 3)
+          const delay = (i % 5) * 0.4
+          
+          return (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white/20 rounded-full"
+              style={{
+                left: `${left}%`,
+                top: `${top}%`,
+              }}
+              animate={{
+                y: [0, -100, 0],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration,
+                repeat: Infinity,
+                delay,
+              }}
+            />
+          )
+        })}
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
