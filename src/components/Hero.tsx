@@ -29,32 +29,32 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,191,0,0.15),transparent_50%)] animate-pulse" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.15),transparent_50%)] animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_60%,rgba(59,130,246,0.1),transparent_50%)] animate-pulse" style={{ animationDelay: "2s" }} />
+      {/* Elegant Light Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/50">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.08),transparent_50%)] animate-pulse" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.06),transparent_50%)] animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_60%,rgba(139,92,246,0.04),transparent_50%)] animate-pulse" style={{ animationDelay: "2s" }} />
       </div>
 
-      {/* Floating Geometric Shapes */}
+      {/* Floating Geometric Shapes - Light Theme */}
       <motion.div
-        className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-amber-400/20 to-amber-600/20 rounded-full blur-xl"
+        className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-200/40 to-blue-300/30 rounded-full blur-xl"
         animate={floatingAnimation}
         style={{ animationDelay: "0s" }}
       />
       <motion.div
-        className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-purple-600/20 rounded-xl blur-xl"
+        className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-indigo-200/40 to-indigo-300/30 rounded-xl blur-xl"
         animate={floatingAnimation}
         style={{ animationDelay: "1s" }}
       />
       <motion.div
-        className="absolute bottom-40 left-20 w-24 h-24 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-lg blur-xl"
+        className="absolute bottom-40 left-20 w-24 h-24 bg-gradient-to-br from-purple-200/40 to-purple-300/30 rounded-lg blur-xl"
         animate={floatingAnimation}
         style={{ animationDelay: "2s" }}
       />
 
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+      {/* Subtle Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
 
       <motion.div 
         className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20"
@@ -70,10 +70,10 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500/10 to-amber-600/10 backdrop-blur-md border border-amber-500/20 rounded-full px-4 py-2">
-                  <Zap className="w-4 h-4 text-amber-400" />
-                  <span className="text-amber-200 text-sm font-medium">AI-Powered IELTS Preparation</span>
-                  <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-5 py-2.5 shadow-light-sm">
+                  <Zap className="w-4 h-4 text-blue-600" />
+                  <span className="text-blue-700 text-sm font-semibold">AI-Powered IELTS Preparation</span>
+                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
                 </div>
               </motion.div>
 
@@ -84,16 +84,16 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="space-y-6"
               >
-                <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-                  <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+                <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
+                  <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent">
                     Master IELTS with
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
                     AI Precision
                   </span>
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-300 max-w-2xl leading-relaxed">
+                <p className="text-xl md:text-2xl text-slate-600 max-w-2xl leading-relaxed font-medium">
                   Revolutionary AI-driven personalized coaching that adapts to your learning style. 
                   Achieve your target IELTS score 10x faster with our intelligent practice system.
                 </p>
@@ -106,7 +106,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
               >
-                <Button variant="primary" size="xl" className="group">
+                <Button variant="primary" size="xl" className="group shadow-light-lg hover:shadow-light-xl">
                   <span className="flex items-center space-x-2">
                     <span>Start Free Trial</span>
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -125,21 +125,21 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="flex items-center space-x-6 text-sm text-gray-400"
+                className="flex items-center space-x-6 text-sm text-slate-500"
               >
                 <div className="flex items-center space-x-2">
                   <div className="flex -space-x-2">
                     {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 border-2 border-black" />
+                      <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white shadow-light-sm" />
                     ))}
                   </div>
-                  <span>50,000+ students trust us</span>
+                  <span className="font-medium">50,000+ students trust us</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
-                  <span className="ml-2">4.9/5 rating</span>
+                  <span className="ml-2 font-medium">4.9/5 rating</span>
                 </div>
               </motion.div>
             </div>
@@ -153,15 +153,15 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="relative"
               >
-                <GlassCard variant="default" glow className="p-8">
+                <GlassCard variant="premium" glow className="p-8">
                   <div className="space-y-6">
                     <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-light-md">
                         <Target className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white">Live Progress</h3>
-                        <p className="text-gray-300">Real-time performance tracking</p>
+                        <h3 className="text-xl font-bold text-slate-800">Live Progress</h3>
+                        <p className="text-slate-600">Real-time performance tracking</p>
                       </div>
                     </div>
                     
@@ -170,12 +170,12 @@ export default function Hero() {
                       {["Speaking", "Writing", "Reading", "Listening"].map((skill, index) => (
                         <div key={skill} className="space-y-2">
                           <div className="flex justify-between text-sm">
-                            <span className="text-white">{skill}</span>
-                            <span className="text-amber-400">{85 + index * 3}%</span>
+                            <span className="text-slate-700 font-medium">{skill}</span>
+                            <span className="text-blue-600 font-semibold">{85 + index * 3}%</span>
                           </div>
-                          <div className="w-full bg-white/10 rounded-full h-2 overflow-hidden">
+                          <div className="w-full bg-slate-200/50 rounded-full h-2.5 overflow-hidden">
                             <motion.div
-                              className="h-full bg-gradient-to-r from-amber-400 to-amber-500 rounded-full"
+                              className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full shadow-sm"
                               initial={{ width: 0 }}
                               animate={{ width: `${85 + index * 3}%` }}
                               transition={{ duration: 1.5, delay: 0.8 + index * 0.2 }}
@@ -196,9 +196,9 @@ export default function Hero() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.6, delay: 1 + index * 0.2 }}
                     >
-                      <GlassCard variant="subtle" className="p-4 text-center">
-                        <stat.icon className="w-6 h-6 text-amber-400 mx-auto mb-2" />
-                        <div className="text-2xl font-bold text-white">
+                      <GlassCard variant="strong" className="p-4 text-center">
+                        <stat.icon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                        <div className="text-2xl font-bold text-slate-800">
                           <AnimatedNumber
                             value={stat.value}
                             prefix={stat.prefix}
@@ -206,7 +206,7 @@ export default function Hero() {
                             duration={2000}
                           />
                         </div>
-                        <div className="text-xs text-gray-300">{stat.label}</div>
+                        <div className="text-xs text-slate-600 font-medium">{stat.label}</div>
                       </GlassCard>
                     </motion.div>
                   ))}
@@ -220,9 +220,9 @@ export default function Hero() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.6, delay: 1.4 + index * 0.2 }}
                     >
-                      <GlassCard variant="subtle" className="p-4 text-center">
-                        <stat.icon className="w-6 h-6 text-amber-400 mx-auto mb-2" />
-                        <div className="text-2xl font-bold text-white">
+                      <GlassCard variant="strong" className="p-4 text-center">
+                        <stat.icon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                        <div className="text-2xl font-bold text-slate-800">
                           <AnimatedNumber
                             value={stat.value}
                             prefix={stat.prefix}
@@ -230,7 +230,7 @@ export default function Hero() {
                             duration={2000}
                           />
                         </div>
-                        <div className="text-xs text-gray-300">{stat.label}</div>
+                        <div className="text-xs text-slate-600 font-medium">{stat.label}</div>
                       </GlassCard>
                     </motion.div>
                   ))}
@@ -248,15 +248,15 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.8 }}
       >
-        <div className="flex flex-col items-center space-y-2 text-white/60">
-          <span className="text-sm">Scroll to explore</span>
+        <div className="flex flex-col items-center space-y-2 text-slate-400">
+          <span className="text-sm font-medium">Scroll to explore</span>
           <motion.div
-            className="w-6 h-10 border border-white/20 rounded-full flex justify-center"
+            className="w-6 h-10 border-2 border-slate-300 rounded-full flex justify-center bg-white/40 backdrop-blur-sm shadow-light-sm"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             <motion.div
-              className="w-1 h-3 bg-white/40 rounded-full mt-2"
+              className="w-1 h-3 bg-slate-400 rounded-full mt-2"
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             />

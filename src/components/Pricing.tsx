@@ -22,7 +22,9 @@ export default function Pricing() {
       ],
       cta: "Start Free",
       variant: "outline" as const,
-      popular: false
+      popular: false,
+      iconColor: "text-blue-600",
+      iconBg: "from-blue-100 to-blue-200"
     },
     {
       name: "Pro",
@@ -42,7 +44,9 @@ export default function Pricing() {
       ],
       cta: "Start Pro Trial",
       variant: "primary" as const,
-      popular: true
+      popular: true,
+      iconColor: "text-white",
+      iconBg: "from-blue-500 to-indigo-600"
     },
     {
       name: "Enterprise",
@@ -62,7 +66,9 @@ export default function Pricing() {
       ],
       cta: "Contact Sales",
       variant: "glass" as const,
-      popular: false
+      popular: false,
+      iconColor: "text-purple-600",
+      iconBg: "from-purple-100 to-purple-200"
     }
   ]
 
@@ -82,14 +88,16 @@ export default function Pricing() {
   }
 
   return (
-    <section id="pricing" className="py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,191,0,0.1),transparent_70%)]" />
+    <section id="pricing" className="py-24 relative overflow-hidden bg-gradient-to-b from-gray-50/50 via-blue-50/30 to-indigo-50/50">
+      {/* Elegant Light Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.06),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(99,102,241,0.04),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.03),transparent_60%)]" />
       </div>
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:80px_80px] opacity-30" />
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:80px_80px] opacity-40" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -99,22 +107,22 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500/10 to-amber-600/10 backdrop-blur-md border border-amber-500/20 rounded-full px-4 py-2 mb-6">
-            <Star className="w-4 h-4 text-amber-400" />
-            <span className="text-amber-200 text-sm font-medium">Transparent Pricing</span>
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-5 py-2.5 mb-6 shadow-light-sm">
+            <Star className="w-4 h-4 text-blue-600" />
+            <span className="text-blue-700 text-sm font-semibold">Transparent Pricing</span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+            <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent">
               Choose Your
             </span>
             <br />
-            <span className="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
               Success Plan
             </span>
           </h2>
           
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
             Start free, upgrade when you&apos;re ready. All plans include our core AI technology 
             and are designed to help you achieve your target IELTS score.
           </p>
@@ -135,7 +143,7 @@ export default function Pricing() {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="bg-gradient-to-r from-amber-400 to-amber-600 text-black px-4 py-1 rounded-full text-sm font-bold flex items-center space-x-1">
+                  <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1.5 rounded-full text-sm font-bold flex items-center space-x-1 shadow-light-lg">
                     <Star className="w-4 h-4" />
                     <span>Most Popular</span>
                   </div>
@@ -143,18 +151,18 @@ export default function Pricing() {
               )}
 
               <GlassCard 
-                variant={plan.popular ? "strong" : "default"}
+                variant={plan.popular ? "premium" : "strong"}
                 glow={plan.popular}
-                className={`h-full ${plan.popular ? 'ring-2 ring-amber-500/50 scale-105' : ''}`}
+                className={`h-full transition-all duration-300 ${plan.popular ? 'ring-2 ring-blue-200/50 scale-105 shadow-light-xl' : 'hover:scale-[1.02]'}`}
               >
                 <div className="p-8 h-full flex flex-col">
                   {/* Header */}
                   <div className="text-center mb-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-400/20 to-amber-600/20 rounded-xl mb-4">
-                      <plan.icon className="w-8 h-8 text-amber-400" />
+                    <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${plan.iconBg} rounded-xl mb-4 shadow-light-md`}>
+                      <plan.icon className={`w-8 h-8 ${plan.iconColor}`} />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                    <p className="text-gray-300 text-sm">{plan.description}</p>
+                    <h3 className="text-2xl font-bold text-slate-800 mb-2">{plan.name}</h3>
+                    <p className="text-slate-600 text-sm font-medium">{plan.description}</p>
                   </div>
 
                   {/* Pricing */}
@@ -162,17 +170,17 @@ export default function Pricing() {
                     {plan.price !== null ? (
                       <>
                         <div className="flex items-baseline justify-center space-x-1">
-                          <span className="text-4xl font-bold text-white">${plan.price}</span>
-                          <span className="text-gray-400">{plan.period}</span>
+                          <span className="text-4xl font-bold text-slate-800">${plan.price}</span>
+                          <span className="text-slate-500 font-medium">{plan.period}</span>
                         </div>
                         {plan.price > 0 && (
-                          <p className="text-sm text-gray-400 mt-2">
+                          <p className="text-sm text-slate-500 mt-2 font-medium">
                             7-day free trial • Cancel anytime
                           </p>
                         )}
                       </>
                     ) : (
-                      <div className="text-2xl font-bold text-white">{plan.period}</div>
+                      <div className="text-2xl font-bold text-slate-800">{plan.period}</div>
                     )}
                   </div>
 
@@ -188,10 +196,10 @@ export default function Pricing() {
                           viewport={{ once: true }}
                           className="flex items-start space-x-3"
                         >
-                          <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mt-0.5">
+                          <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mt-0.5 shadow-sm">
                             <Check className="w-3 h-3 text-white" />
                           </div>
-                          <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
+                          <span className="text-slate-600 text-sm leading-relaxed font-medium">{feature}</span>
                         </motion.li>
                       ))}
                     </ul>
@@ -227,28 +235,28 @@ export default function Pricing() {
           className="mt-16 text-center"
         >
           <div className="max-w-4xl mx-auto">
-            <GlassCard variant="subtle" className="p-8">
+            <GlassCard variant="default" className="p-8">
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 <div>
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-light-md">
                     <Check className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">Money-Back Guarantee</h4>
-                                     <p className="text-gray-300 text-sm">30-day full refund if you&apos;re not satisfied</p>
+                  <h4 className="text-lg font-bold text-slate-800 mb-2">Money-Back Guarantee</h4>
+                  <p className="text-slate-600 text-sm font-medium">30-day full refund if you&apos;re not satisfied</p>
                 </div>
                 <div>
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-light-md">
                     <Users className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">50,000+ Students</h4>
-                  <p className="text-gray-300 text-sm">Join thousands of successful IELTS candidates</p>
+                  <h4 className="text-lg font-bold text-slate-800 mb-2">50,000+ Students</h4>
+                  <p className="text-slate-600 text-sm font-medium">Join thousands of successful IELTS candidates</p>
                 </div>
                 <div>
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-light-md">
                     <Star className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">4.9/5 Rating</h4>
-                  <p className="text-gray-300 text-sm">Highest rated IELTS preparation platform</p>
+                  <h4 className="text-lg font-bold text-slate-800 mb-2">4.9/5 Rating</h4>
+                  <p className="text-slate-600 text-sm font-medium">Highest rated IELTS preparation platform</p>
                 </div>
               </div>
             </GlassCard>

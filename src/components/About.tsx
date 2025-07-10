@@ -7,10 +7,10 @@ import { AnimatedNumber } from "@/components/ui/animated-number"
 
 export default function About() {
   const achievements = [
-    { icon: Users, number: 50000, suffix: "+", label: "Active Students" },
-    { icon: Globe, number: 120, suffix: "+", label: "Countries Served" },
-    { icon: Target, number: 98, suffix: "%", label: "Success Rate" },
-    { icon: TrendingUp, number: 4.9, suffix: "/5", label: "Average Rating" }
+    { icon: Users, number: 50000, suffix: "+", label: "Active Students", color: "text-blue-600", bg: "from-blue-100 to-blue-200" },
+    { icon: Globe, number: 120, suffix: "+", label: "Countries Served", color: "text-indigo-600", bg: "from-indigo-100 to-indigo-200" },
+    { icon: Target, number: 98, suffix: "%", label: "Success Rate", color: "text-emerald-600", bg: "from-emerald-100 to-emerald-200" },
+    { icon: TrendingUp, number: 4.9, suffix: "/5", label: "Average Rating", color: "text-purple-600", bg: "from-purple-100 to-purple-200" }
   ]
 
   const credentials = [
@@ -26,28 +26,32 @@ export default function About() {
       name: "Dr. Sarah Chen",
       role: "AI Research Director",
       background: "Former Cambridge IELTS Examiner",
-      image: "/placeholder-team-1.jpg"
+      image: "/placeholder-team-1.jpg",
+      bg: "from-blue-500 to-blue-600"
     },
     {
       name: "Michael Rodriguez",
       role: "CTO",
       background: "Ex-Google AI Engineer",
-      image: "/placeholder-team-2.jpg"
+      image: "/placeholder-team-2.jpg",
+      bg: "from-indigo-500 to-indigo-600"
     },
     {
       name: "Prof. James Wilson",
       role: "Academic Advisor",
       background: "IELTS Content Specialist",
-      image: "/placeholder-team-3.jpg"
+      image: "/placeholder-team-3.jpg",
+      bg: "from-purple-500 to-purple-600"
     }
   ]
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/90 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(168,85,247,0.15),transparent_50%)]" />
+    <section id="about" className="py-24 relative overflow-hidden bg-gradient-to-b from-blue-50/30 via-indigo-50/50 to-purple-50/30">
+      {/* Elegant Light Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(99,102,241,0.04),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,rgba(139,92,246,0.03),transparent_50%)]" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,22 +63,22 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-md border border-blue-500/20 rounded-full px-4 py-2 mb-6">
-            <Award className="w-4 h-4 text-blue-400" />
-            <span className="text-blue-200 text-sm font-medium">Award-Winning Platform</span>
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-5 py-2.5 mb-6 shadow-light-sm">
+            <Award className="w-4 h-4 text-blue-600" />
+            <span className="text-blue-700 text-sm font-semibold">Award-Winning Platform</span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+            <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent">
               Trusted by Millions
             </span>
             <br />
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
               Worldwide
             </span>
           </h2>
           
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
             Founded by IELTS experts and powered by cutting-edge AI technology, 
             Pistah is revolutionizing how students prepare for and ace the IELTS exam.
           </p>
@@ -96,18 +100,18 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
               viewport={{ once: true }}
             >
-              <GlassCard variant="default" className="text-center group hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <achievement.icon className="w-8 h-8 text-blue-400" />
+              <GlassCard variant="strong" className="text-center group hover:scale-105 transition-all duration-300">
+                <div className={`w-16 h-16 bg-gradient-to-br ${achievement.bg} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-light-md`}>
+                  <achievement.icon className={`w-8 h-8 ${achievement.color}`} />
                 </div>
-                <div className="text-3xl font-bold text-white mb-2">
+                <div className="text-3xl font-bold text-slate-800 mb-2">
                   <AnimatedNumber
                     value={achievement.number}
                     suffix={achievement.suffix}
                     duration={2000}
                   />
                 </div>
-                <p className="text-gray-300 text-sm">{achievement.label}</p>
+                <p className="text-slate-600 text-sm font-medium">{achievement.label}</p>
               </GlassCard>
             </motion.div>
           ))}
@@ -122,22 +126,22 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <GlassCard variant="default" className="h-full">
+            <GlassCard variant="premium" className="h-full">
               <div className="p-8">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-black" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-light-md">
+                    <Zap className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Our Mission</h3>
+                  <h3 className="text-2xl font-bold text-slate-800">Our Mission</h3>
                 </div>
                 
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-slate-600 leading-relaxed mb-6 font-medium">
                   We believe that language barriers shouldn&apos;t limit anyone&apos;s potential. 
                   That&apos;s why we created Pistah - to democratize access to world-class IELTS 
                   preparation through the power of artificial intelligence.
                 </p>
                 
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-slate-600 leading-relaxed mb-6 font-medium">
                   Our AI-powered platform has helped over 50,000 students from 120+ countries 
                   achieve their dream IELTS scores, opening doors to top universities, 
                   immigration opportunities, and career advancement worldwide.
@@ -153,8 +157,8 @@ export default function About() {
                       viewport={{ once: true }}
                       className="flex items-center space-x-3"
                     >
-                      <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300 text-sm">{credential}</span>
+                      <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                      <span className="text-slate-600 text-sm font-medium">{credential}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -169,16 +173,16 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <GlassCard variant="default" className="h-full">
+            <GlassCard variant="premium" className="h-full">
               <div className="p-8">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-light-md">
                     <Users className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Expert Team</h3>
+                  <h3 className="text-2xl font-bold text-slate-800">Expert Team</h3>
                 </div>
                 
-                <p className="text-gray-300 leading-relaxed mb-8">
+                <p className="text-slate-600 leading-relaxed mb-8 font-medium">
                   Our world-class team combines decades of IELTS expertise with 
                   cutting-edge AI research to deliver unparalleled learning experiences.
                 </p>
@@ -191,17 +195,17 @@ export default function About() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                       viewport={{ once: true }}
-                      className="flex items-center space-x-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-300"
+                      className="flex items-center space-x-4 p-4 rounded-xl bg-slate-50/60 hover:bg-slate-100/60 transition-all duration-300 border border-slate-200/30"
                     >
-                      <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
-                        <span className="text-black font-bold text-sm">
+                      <div className={`w-12 h-12 bg-gradient-to-br ${member.bg} rounded-full flex items-center justify-center shadow-light-sm`}>
+                        <span className="text-white font-bold text-sm">
                           {member.name.split(' ').map(n => n[0]).join('')}
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-white font-semibold">{member.name}</h4>
-                        <p className="text-blue-400 text-sm">{member.role}</p>
-                        <p className="text-gray-400 text-xs">{member.background}</p>
+                        <h4 className="text-slate-800 font-semibold">{member.name}</h4>
+                        <p className="text-blue-600 text-sm font-medium">{member.role}</p>
+                        <p className="text-slate-500 text-xs font-medium">{member.background}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -219,39 +223,39 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <GlassCard variant="strong" glow className="p-12 max-w-4xl mx-auto">
+          <GlassCard variant="premium" glow className="p-12 max-w-4xl mx-auto">
             <div className="relative">
               {/* Background glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-amber-500/10 rounded-xl blur-xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-indigo-500/5 to-purple-500/5 rounded-2xl blur-xl" />
               
               <div className="relative z-10">
                 <div className="flex items-center justify-center space-x-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-light-lg">
                     <Award className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-left">
-                    <h3 className="text-2xl font-bold text-white">Backed by Google for Startups</h3>
-                    <p className="text-blue-400">Selected for innovation in AI-powered education</p>
+                    <h3 className="text-2xl font-bold text-slate-800">Backed by Google for Startups</h3>
+                    <p className="text-blue-600 font-medium">Selected for innovation in AI-powered education</p>
                   </div>
                 </div>
                 
-                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto font-medium">
                   We&apos;re proud to be part of Google for Startups, working alongside the world&apos;s 
                   most innovative companies to transform education through technology.
                 </p>
                 
                 <div className="flex justify-center items-center space-x-8">
                   <div className="flex items-center space-x-2">
-                    <Star className="w-5 h-5 text-amber-400" />
-                    <span className="text-gray-300">Innovation Award Winner</span>
+                    <Star className="w-5 h-5 text-amber-500" />
+                    <span className="text-slate-600 font-medium">Innovation Award Winner</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-gray-300">Google Cloud Partner</span>
+                    <CheckCircle className="w-5 h-5 text-emerald-500" />
+                    <span className="text-slate-600 font-medium">Google Cloud Partner</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Globe className="w-5 h-5 text-blue-400" />
-                    <span className="text-gray-300">Global Impact</span>
+                    <Globe className="w-5 h-5 text-blue-500" />
+                    <span className="text-slate-600 font-medium">Global Impact</span>
                   </div>
                 </div>
               </div>
