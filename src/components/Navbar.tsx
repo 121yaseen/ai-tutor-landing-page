@@ -82,10 +82,12 @@ export default function Navbar() {
             <Button variant="ghost" size="sm" className="text-slate-600 hover:text-slate-900">
               Sign In
             </Button>
-            <Button variant="primary" size="sm" className="relative group overflow-hidden">
-              <span className="relative z-10">Start Free Trial</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl" />
-            </Button>
+            <Link href="https://learn.pistah.live">
+              <Button variant="primary" size="sm" className="relative group overflow-hidden">
+                <span className="relative z-10">Start Free Trial</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl" />
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -141,9 +143,11 @@ export default function Navbar() {
                   <Button variant="ghost" size="sm" className="w-full justify-center">
                     Sign In
                   </Button>
-                  <Button variant="primary" size="sm" className="w-full">
-                    Start Free Trial
-                  </Button>
+                  <Link href="https://learn.pistah.live">
+                    <Button variant="primary" size="sm" className="w-full">
+                      Start Free Trial
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

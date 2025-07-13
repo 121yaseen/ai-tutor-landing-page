@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Check, Star, Zap, Crown, Users, Sparkles } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { GlassCard } from "@/components/ui/glass-card"
 
@@ -206,20 +207,31 @@ export default function Pricing() {
                   </div>
 
                   {/* CTA */}
-                  <Button 
-                    variant={plan.variant}
-                    size="lg"
-                    className="w-full group"
-                  >
-                    <span className="flex items-center justify-center space-x-2">
-                      <span>{plan.cta}</span>
-                      {plan.name === "Enterprise" ? (
+                  {plan.name === "Enterprise" ? (
+                    <Button 
+                      variant={plan.variant}
+                      size="lg"
+                      className="w-full group"
+                    >
+                      <span className="flex items-center justify-center space-x-2">
+                        <span>{plan.cta}</span>
                         <Users className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                      ) : (
-                        <Zap className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                      )}
-                    </span>
-                  </Button>
+                      </span>
+                    </Button>
+                  ) : (
+                    <Link href="https://learn.pistah.live">
+                      <Button 
+                        variant={plan.variant}
+                        size="lg"
+                        className="w-full group"
+                      >
+                        <span className="flex items-center justify-center space-x-2">
+                          <span>{plan.cta}</span>
+                          <Zap className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </span>
+                      </Button>
+                    </Link>
+                  )}
                 </div>
               </GlassCard>
             </motion.div>

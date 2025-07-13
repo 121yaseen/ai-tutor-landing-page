@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, Play, Star, Zap, Target, Users } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { GlassCard } from "@/components/ui/glass-card"
 import { AnimatedNumber } from "@/components/ui/animated-number"
@@ -106,12 +107,14 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
               >
-                <Button variant="primary" size="xl" className="group shadow-light-lg hover:shadow-light-xl">
-                  <span className="flex items-center space-x-2">
-                    <span>Start Free Trial</span>
-                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Button>
+                <Link href="https://learn.pistah.live">
+                  <Button variant="primary" size="xl" className="group shadow-light-lg hover:shadow-light-xl">
+                    <span className="flex items-center space-x-2">
+                      <span>Start Free Trial</span>
+                      <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Button>
+                </Link>
                 <Button variant="glass" size="xl" className="group">
                   <span className="flex items-center space-x-2">
                     <Play className="w-5 h-5" />

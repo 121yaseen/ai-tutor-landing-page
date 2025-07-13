@@ -16,7 +16,7 @@ export default function Footer() {
         { label: "Pricing", href: "#pricing" },
         { label: "Success Stories", href: "#testimonials" },
         { label: "API Documentation", href: "/api-docs" },
-        { label: "Mobile App", href: "/mobile" }
+        { label: "Mobile App", href: "https://learn.pistah.live" }
       ]
     },
     {
