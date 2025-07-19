@@ -260,8 +260,8 @@ export default function Pricing() {
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-light-md">
                     <Users className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-lg font-bold text-slate-800 mb-2">50,000+ Students</h4>
-                  <p className="text-slate-600 text-sm font-medium">Join thousands of successful IELTS candidates</p>
+                  <h4 className="text-lg font-bold text-slate-800 mb-2">50+ Students</h4>
+                  <p className="text-slate-600 text-sm font-medium">Join successful IELTS candidates</p>
                 </div>
                 <div>
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-light-md">

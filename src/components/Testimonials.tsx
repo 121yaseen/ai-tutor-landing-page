@@ -90,7 +90,7 @@ export default function Testimonials() {
   }, [])
 
   const stats = [
-    { icon: Users, value: "50,000+", label: "Success Stories", color: "text-blue-600", bg: "from-blue-100 to-blue-200" },
+    { icon: Users, value: "50+", label: "Success Stories", color: "text-blue-600", bg: "from-blue-100 to-blue-200" },
     { icon: Trophy, value: "8.2", label: "Average Score", color: "text-emerald-600", bg: "from-emerald-100 to-emerald-200" },
     { icon: Target, value: "95%", label: "Goal Achievement", color: "text-purple-600", bg: "from-purple-100 to-purple-200" }
   ]

@@ -79,9 +79,11 @@ export default function Navbar() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex md:items-center md:space-x-3">
-            <Button variant="ghost" size="sm" className="text-slate-600 hover:text-slate-900">
-              Sign In
-            </Button>
+            <Link href="https://learn.pistah.live">
+              <Button variant="ghost" size="sm" className="text-slate-600 hover:text-slate-900">
+                Sign In
+              </Button>
+            </Link>
             <Link href="https://learn.pistah.live">
               <Button variant="primary" size="sm" className="relative group overflow-hidden">
                 <span className="relative z-10">Start Free Trial</span>
@@ -140,9 +142,11 @@ export default function Navbar() {
                   </motion.div>
                 ))}
                 <div className="pt-4 space-y-3 border-t border-white/30">
-                  <Button variant="ghost" size="sm" className="w-full justify-center">
-                    Sign In
-                  </Button>
+                  <Link href="https://learn.pistah.live">
+                    <Button variant="ghost" size="sm" className="w-full justify-center">
+                      Sign In
+                    </Button>
+                  </Link>
                   <Link href="https://learn.pistah.live">
                     <Button variant="primary" size="sm" className="w-full">
                       Start Free Trial

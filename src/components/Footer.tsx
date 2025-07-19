@@ -52,17 +52,45 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Twitter, href: "https://twitter.com/pistah", label: "Twitter", color: "hover:text-sky-600" },
-    { icon: Linkedin, href: "https://linkedin.com/company/pistah", label: "LinkedIn", color: "hover:text-blue-600" },
-    { icon: Github, href: "https://github.com/pistah", label: "GitHub", color: "hover:text-slate-800" },
-    { icon: Youtube, href: "https://youtube.com/pistah", label: "YouTube", color: "hover:text-red-600" }
-  ]
+    {
+      icon: Twitter,
+      href: "https://twitter.com/pistah",
+      label: "Twitter",
+      color: "hover:text-sky-600",
+    },
+    {
+      icon: Linkedin,
+      href: "https://linkedin.com/company/pistah",
+      label: "LinkedIn",
+      color: "hover:text-blue-600",
+    },
+    {
+      icon: Github,
+      href: "https://github.com/pistah-ad",
+      label: "GitHub",
+      color: "hover:text-slate-800",
+    },
+    {
+      icon: Youtube,
+      href: "https://youtube.com/pistah",
+      label: "YouTube",
+      color: "hover:text-red-600",
+    },
+  ];
 
   const contactInfo = [
     { icon: Mail, text: "hello@pistah.live", href: "mailto:hello@pistah.live" },
-    { icon: Phone, text: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: MapPin, text: "San Francisco, CA", href: "#" }
-  ]
+    {
+      icon: Phone,
+      text: "+91 81370 54594",
+      href: "tel:+918137054594",
+    },
+    {
+      icon: MapPin,
+      text: "Bengaluru, India",
+      href: "https://maps.app.goo.gl/KEWRWzFQ6m21WG8F9",
+    },
+  ];
 
   return (
     <footer className="relative py-20 overflow-hidden bg-gradient-to-t from-slate-100/80 via-blue-50/50 to-indigo-50/30">
@@ -103,7 +131,7 @@ export default function Footer() {
 
                 <p className="text-slate-600 leading-relaxed max-w-md font-medium">
                   Revolutionizing IELTS preparation with AI-powered coaching. 
-                  Join 50,000+ students who have achieved their dream scores with our 
+                  Join 50+ students who have achieved their dream scores with our 
                   intelligent platform.
                 </p>
 
@@ -234,15 +262,15 @@ export default function Footer() {
             </div>
             
             <div className="flex items-center space-x-4 text-sm text-slate-500 font-medium">
-              <span>🌍 Available in 120+ countries</span>
+              <span>🌍 Available in 20+ countries</span>
               <span>•</span>
               <span>🏆 4.9/5 rating</span>
               <span>•</span>
-              <span>✨ 50,000+ students</span>
+              <span>✨ 50+ students</span>
             </div>
           </div>
         </motion.div>
       </div>
     </footer>
-  )
-} 
+  );
+}

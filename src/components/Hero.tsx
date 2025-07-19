@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, Play, Star, Zap, Target, Users } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { GlassCard } from "@/components/ui/glass-card"
 import { AnimatedNumber } from "@/components/ui/animated-number"
@@ -22,7 +23,7 @@ export default function Hero() {
   }
 
   const stats = [
-    { icon: Users, value: 50000, suffix: "+", label: "Active Users" },
+    { icon: Users, value: 50, suffix: "+", label: "Active Users" },
     { icon: Target, value: 98, suffix: "%", label: "Success Rate" },
     { icon: Star, value: 4.9, prefix: "", suffix: "/5", label: "Rating" },
     { icon: Zap, value: 10, suffix: "x", label: "Faster Learning" }
@@ -133,10 +134,17 @@ export default function Hero() {
                 <div className="flex items-center space-x-2">
                   <div className="flex -space-x-2">
                     {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white shadow-light-sm" />
+                      <div key={i} className="relative w-8 h-8 rounded-full border-2 border-white shadow-light-sm overflow-hidden">
+                        <Image
+                          src={`/user-pic-small/user ${i}.png`}
+                          alt={`User ${i}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     ))}
                   </div>
-                  <span className="font-medium">50,000+ students trust us</span>
+                  <span className="font-medium">50+ students trust us</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   {[1, 2, 3, 4, 5].map((i) => (
@@ -206,7 +214,6 @@ export default function Hero() {
                             value={stat.value}
                             prefix={stat.prefix}
                             suffix={stat.suffix}
-                            duration={2000}
                           />
                         </div>
                         <div className="text-xs text-slate-600 font-medium">{stat.label}</div>
@@ -226,12 +233,15 @@ export default function Hero() {
                       <GlassCard variant="strong" className="p-4 text-center">
                         <stat.icon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
                         <div className="text-2xl font-bold text-slate-800">
-                          <AnimatedNumber
-                            value={stat.value}
-                            prefix={stat.prefix}
-                            suffix={stat.suffix}
-                            duration={2000}
-                          />
+                          {stat.label === "Rating" ? (
+                            `${stat.prefix || ""}${stat.value}${stat.suffix || ""}`
+                          ) : (
+                            <AnimatedNumber
+                              value={stat.value}
+                              prefix={stat.prefix}
+                              suffix={stat.suffix}
+                            />
+                          )}
                         </div>
                         <div className="text-xs text-slate-600 font-medium">{stat.label}</div>
                       </GlassCard>

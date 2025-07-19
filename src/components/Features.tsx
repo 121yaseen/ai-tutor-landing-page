@@ -5,6 +5,7 @@ import { useRef } from "react"
 import { BrainCircuit, Ear, Pencil, Users, BarChart, Sparkles, Target, Zap, Clock, Trophy, Globe, Shield } from "lucide-react"
 import { GlassCard } from "@/components/ui/glass-card"
 import { AnimatedNumber } from "@/components/ui/animated-number"
+import Link from "next/link"
 
 export default function Features() {
   const ref = useRef(null)
@@ -50,7 +51,7 @@ export default function Features() {
     { icon: BarChart, title: "Advanced Analytics", description: "Detailed progress tracking and insights", color: "text-indigo-600" },
     { icon: Clock, title: "Flexible Scheduling", description: "Study at your own pace, anytime", color: "text-purple-600" },
     { icon: Trophy, title: "Achievement System", description: "Gamified learning with rewards", color: "text-emerald-600" },
-    { icon: Globe, title: "Global Community", description: "Join 50,000+ active learners", color: "text-blue-600" },
+    { icon: Globe, title: "Global Community", description: "Join 50+ active learners", color: "text-blue-600" },
     { icon: Shield, title: "Score Guarantee", description: "Improve your score or money back", color: "text-indigo-600" }
   ]
 
@@ -176,7 +177,6 @@ export default function Features() {
                         <AnimatedNumber
                           value={feature.stats.value}
                           suffix={feature.stats.suffix}
-                          duration={2000}
                         />
                       </div>
                       <div className="text-xs text-slate-500 font-medium">{feature.stats.label}</div>
@@ -266,13 +266,15 @@ export default function Features() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-light-lg hover:shadow-light-xl"
-                  >
-                    Start Your Free Trial
-                  </motion.button>
+                  <Link href="https://learn.pistah.live/">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-light-lg hover:shadow-light-xl"
+                    >
+                      Start Your Free Trial
+                    </motion.button>
+                  </Link>
                   
                   <div className="flex items-center space-x-2 text-slate-500">
                     <Shield className="w-5 h-5 text-emerald-500" />
