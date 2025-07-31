@@ -15,16 +15,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pistah.live"),
   title: "Pistah - AI-Powered IELTS Practice",
-  description: "Your personal AI tutor for IELTS success. Practice Speaking, Listening, Writing, and Reading with real-time feedback.",
-  icons: {
-    icon: [
-      { url: "/pistah-icon.svg", type: "image/svg+xml" },
-      { url: "/pistah-icon.svg", sizes: "32x32", type: "image/svg+xml" },
-      { url: "/pistah-icon.svg", sizes: "16x16", type: "image/svg+xml" },
+  description:
+    "Your personal AI tutor for IELTS success. Practice Speaking, Listening, Writing, and Reading with real-time feedback.",
+  keywords: [
+    "IELTS",
+    "AI tutor",
+    "IELTS practice",
+    "public speaking",
+    "language learning",
+  ],
+  authors: [{ name: "Muhammed Yaseen", url: "https://yaseen.site" }],
+  creator: "Muhammed Yaseen",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://pistah.live",
+    title: "Pistah - AI-Powered IELTS Practice",
+    description:
+      "Your personal AI tutor for IELTS success. Practice Speaking, Listening, Writing, and Reading with real-time feedback.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Pistah - AI-Powered IELTS Practice",
+      },
     ],
-    shortcut: "/pistah-icon.svg",
-    apple: "/pistah-icon.svg",
+  },
+  icons: {
+    icon: "/pistah-icon.svg",
   },
 };
 
