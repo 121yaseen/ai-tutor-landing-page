@@ -17,6 +17,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Pistah - AI-Powered IELTS Practice",
   description: "Your personal AI tutor for IELTS success. Practice Speaking, Listening, Writing, and Reading with real-time feedback.",
+  icons: {
+    icon: [
+      { url: "/pistah-icon.svg", type: "image/svg+xml" },
+      { url: "/pistah-icon.svg", sizes: "32x32", type: "image/svg+xml" },
+      { url: "/pistah-icon.svg", sizes: "16x16", type: "image/svg+xml" },
+    ],
+    shortcut: "/pistah-icon.svg",
+    apple: "/pistah-icon.svg",
+  },
 };
 
 export default function RootLayout({
