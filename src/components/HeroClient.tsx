@@ -146,13 +146,12 @@ export default function HeroClient() {
             </div>
 
             {/* Right Column - Stats & Visual Elements */}
-            <div className="relative">
+            <div className="space-y-6">
               {/* Main Glass Card */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative"
               >
                 <GlassCard variant="premium" glow className="p-8">
                   <div className="space-y-6">
@@ -187,57 +186,39 @@ export default function HeroClient() {
                     </div>
                   </div>
                 </GlassCard>
+              </motion.div>
 
-                {/* Floating Stats Cards */}
-                <div className="absolute -top-6 -right-6 grid grid-cols-2 gap-3">
-                  {stats.slice(0, 2).map((stat, index) => (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 1 + index * 0.2 }}
-                    >
-                      <GlassCard variant="strong" className="p-4 text-center">
-                        <stat.icon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                        <div className="text-2xl font-bold text-slate-800">
+              {/* Stats Cards Row */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="grid grid-cols-2 lg:grid-cols-4 gap-4"
+              >
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
+                  >
+                    <GlassCard variant="strong" className="p-4 text-center">
+                      <stat.icon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
+                      <div className="text-2xl font-bold text-slate-800">
+                        {stat.label === "Rating" ? (
+                          `${stat.prefix || ""}${stat.value}${stat.suffix || ""}`
+                        ) : (
                           <AnimatedNumber
                             value={stat.value}
                             prefix={stat.prefix}
                             suffix={stat.suffix}
                           />
-                        </div>
-                        <div className="text-xs text-slate-600 font-medium">{stat.label}</div>
-                      </GlassCard>
-                    </motion.div>
-                  ))}
-                </div>
-
-                <div className="absolute -bottom-6 -left-6 grid grid-cols-2 gap-3">
-                  {stats.slice(2).map((stat, index) => (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 1.4 + index * 0.2 }}
-                    >
-                      <GlassCard variant="strong" className="p-4 text-center">
-                        <stat.icon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                        <div className="text-2xl font-bold text-slate-800">
-                          {stat.label === "Rating" ? (
-                            `${stat.prefix || ""}${stat.value}${stat.suffix || ""}`
-                          ) : (
-                            <AnimatedNumber
-                              value={stat.value}
-                              prefix={stat.prefix}
-                              suffix={stat.suffix}
-                            />
-                          )}
-                        </div>
-                        <div className="text-xs text-slate-600 font-medium">{stat.label}</div>
-                      </GlassCard>
-                    </motion.div>
-                  ))}
-                </div>
+                        )}
+                      </div>
+                      <div className="text-xs text-slate-600 font-medium">{stat.label}</div>
+                    </GlassCard>
+                  </motion.div>
+                ))}
               </motion.div>
             </div>
           </div>
