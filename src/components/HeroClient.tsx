@@ -49,7 +49,7 @@ export default function HeroClient() {
       />
 
       <motion.div 
-        className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20"
+        className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pb-0"
         style={{ y, opacity }}
       >
         <div className="max-w-7xl mx-auto">
@@ -223,7 +223,7 @@ export default function HeroClient() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.8 }}
