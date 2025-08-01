@@ -202,18 +202,14 @@ export default function HeroClient() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
                   >
-                    <GlassCard variant="strong" className="p-4 text-center">
+                    <GlassCard variant="strong" className="p-4 text-center h-full flex flex-col justify-center">
                       <stat.icon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                      <div className="text-2xl font-bold text-slate-800">
-                        {stat.label === "Rating" ? (
-                          `${stat.prefix || ""}${stat.value}${stat.suffix || ""}`
-                        ) : (
-                          <AnimatedNumber
-                            value={stat.value}
-                            prefix={stat.prefix}
-                            suffix={stat.suffix}
-                          />
-                        )}
+                      <div className="text-2xl font-bold text-slate-800 mb-1">
+                        <AnimatedNumber
+                          value={stat.value}
+                          prefix={stat.prefix}
+                          suffix={stat.suffix}
+                        />
                       </div>
                       <div className="text-xs text-slate-600 font-medium">{stat.label}</div>
                     </GlassCard>
