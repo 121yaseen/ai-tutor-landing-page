@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/pistah-icon.svg",
+    icon: "/@pistah-icon.svg",
   },
 };
 

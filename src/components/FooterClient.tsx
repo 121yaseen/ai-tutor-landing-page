@@ -2,7 +2,8 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Sparkles, Mail, MapPin, Phone, Twitter, Linkedin, Github, Youtube } from "lucide-react"
+import { Mail, MapPin, Phone, Twitter, Linkedin, Github, Youtube } from "lucide-react"
+import Image from "next/image"
 import { GlassCard } from "@/components/ui/glass-card"
 
 const footerSections = [
@@ -107,11 +108,8 @@ export default function FooterClient() {
             <div className="lg:col-span-2 space-y-6">
               {/* Logo */}
               <div className="flex items-center space-x-3">
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-light-lg shadow-blue-500/25">
-                    <Sparkles className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl blur-lg opacity-40 -z-10 animate-pulse" />
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <Image src="/@pistah-icon.svg" alt="Pistah Icon" width={48} height={48} />
                 </div>
                 <span className="text-3xl font-bold bg-gradient-to-r from-slate-800 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
                   Pistah

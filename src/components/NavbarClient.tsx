@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Sparkles } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
@@ -45,12 +46,9 @@ export default function NavbarClient() {
             whileTap={{ scale: 0.95 }}
           >
             <Link href="/" className="flex items-center space-x-3">
-              <div className="relative">
-                <div className="w-11 h-11 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-light-lg shadow-blue-500/25">
-                  <Sparkles className="w-6 h-6 text-white" />
+              <div className="w-11 h-11 flex items-center justify-center">
+                  <Image src="/@pistah-icon.svg" alt="Pistah Icon" width={44} height={44} />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl blur-lg opacity-40 -z-10 animate-pulse" />
-              </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-slate-800 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
                 Pistah
               </span>
