@@ -30,6 +30,7 @@ const plans = [
     cta: "Start Free",
     variant: "outline" as const,
     popular: false,
+    tags: [],
     iconColor: "text-blue-600",
     iconBg: "from-blue-100 to-blue-200"
   },
@@ -51,7 +52,8 @@ const plans = [
     ],
     cta: "Start Pro Trial",
     variant: "primary" as const,
-    popular: true,
+    popular: false,
+    tags: ["Coming Soon"],
     iconColor: "text-white",
     iconBg: "from-blue-500 to-indigo-600"
   },
@@ -74,6 +76,7 @@ const plans = [
     cta: "Contact Sales",
     variant: "glass" as const,
     popular: false,
+    tags: ["Coming Soon"],
     iconColor: "text-purple-600",
     iconBg: "from-purple-100 to-purple-200"
   }
@@ -150,9 +153,29 @@ export default function PricingClient() {
             <GlassCard 
               variant={plan.popular ? "premium" : "strong"}
               glow={plan.popular}
-              className={`h-full transition-all duration-300 ${plan.popular ? 'ring-2 ring-blue-200/50 scale-105 shadow-light-xl' : 'hover:scale-[1.02]'}`}
+              className={`h-full transition-all duration-300 ${plan.popular ? 'ring-2 ring-blue-200/50 scale-105 hover:scale-105 shadow-light-xl' : 'hover:scale-[1.02]'}`}
             >
               <div className="p-8 h-full flex flex-col">
+                {/* Tags */}
+                {(plan.popular || plan.tags.length > 0) && (
+                  <div className="text-center mb-6 space-y-2">
+                    {/* Most Popular Badge */}
+                    {plan.popular && (
+                      <div className="inline-flex items-center space-x-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-light-lg">
+                        <StarIcon className="w-4 h-4" />
+                        <span>Most Popular</span>
+                      </div>
+                    )}
+                    {/* Other Tags */}
+                    {plan.tags.map((tag, tagIndex) => (
+                      <div key={tagIndex} className="inline-flex items-center space-x-1 bg-gradient-to-r from-amber-500 to-orange-600 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-light-sm">
+                        <span>{tag}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {/* Spacer for plans without any tags to maintain alignment */}
+                {!plan.popular && plan.tags.length === 0 && <div className="mb-6"></div>}
                 {/* Header */}
                 <div className="text-center mb-8">
                   <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${plan.iconBg} rounded-xl mb-4 shadow-light-md`}>
