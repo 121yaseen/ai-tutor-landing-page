@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
@@ -105,7 +105,7 @@ export default function NavbarClient() {
                   exit={{ opacity: 0, rotate: 90 }}
                   transition={{ duration: 0.2 }}
                 >
-                  {isOpen ? <X size={20} /> : <Menu size={20} />}
+                  {isOpen ? <XMarkIcon className="w-5 h-5" /> : <Bars3Icon className="w-5 h-5" />}
                 </motion.div>
               </AnimatePresence>
             </motion.button>

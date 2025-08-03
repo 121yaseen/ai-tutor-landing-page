@@ -1,7 +1,14 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Check, Star, Zap, Crown, Users, Sparkles } from "lucide-react"
+import { 
+  CheckIcon, 
+  StarIcon, 
+  BoltIcon, 
+  Bars3Icon as CrownIcon, 
+  UsersIcon, 
+  SparklesIcon 
+} from "@heroicons/react/24/solid"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { GlassCard } from "@/components/ui/glass-card"
@@ -9,7 +16,7 @@ import { GlassCard } from "@/components/ui/glass-card"
 const plans = [
   {
     name: "Starter",
-    icon: Sparkles,
+    icon: SparklesIcon,
     price: 0,
     period: "Free forever",
     description: "Perfect for getting started with IELTS preparation",
@@ -28,7 +35,7 @@ const plans = [
   },
   {
     name: "Pro",
-    icon: Zap,
+    icon: BoltIcon,
     price: 29,
     period: "per month",
     description: "Advanced features for serious IELTS candidates",
@@ -50,7 +57,7 @@ const plans = [
   },
   {
     name: "Enterprise",
-    icon: Crown,
+    icon: CrownIcon,
     price: null,
     period: "Custom pricing",
     description: "Tailored solution for institutions and organizations",
@@ -98,7 +105,7 @@ export default function PricingClient() {
         className="text-center mb-16"
       >
         <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-5 py-2.5 mb-6 shadow-light-sm">
-          <Star className="w-4 h-4 text-blue-600" />
+          <StarIcon className="w-4 h-4 text-blue-600" />
           <span className="text-blue-700 text-sm font-semibold">Transparent Pricing</span>
         </div>
         
@@ -134,7 +141,7 @@ export default function PricingClient() {
             {plan.popular && (
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
                 <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1.5 rounded-full text-sm font-bold flex items-center space-x-1 shadow-light-lg">
-                  <Star className="w-4 h-4" />
+                  <StarIcon className="w-4 h-4" />
                   <span>Most Popular</span>
                 </div>
               </div>
@@ -187,7 +194,7 @@ export default function PricingClient() {
                         className="flex items-start space-x-3"
                       >
                         <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mt-0.5 shadow-sm">
-                          <Check className="w-3 h-3 text-white" />
+                          <CheckIcon className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-slate-600 text-sm leading-relaxed font-medium">{feature}</span>
                       </motion.li>
@@ -204,7 +211,7 @@ export default function PricingClient() {
                   >
                     <span className="flex items-center justify-center space-x-2">
                       <span>{plan.cta}</span>
-                      <Users className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      <UsersIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </Button>
                 ) : (
@@ -216,7 +223,7 @@ export default function PricingClient() {
                     >
                       <span className="flex items-center justify-center space-x-2">
                         <span>{plan.cta}</span>
-                        <Zap className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        <BoltIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </span>
                     </Button>
                   </Link>
@@ -240,21 +247,21 @@ export default function PricingClient() {
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-light-md">
-                  <Check className="w-6 h-6 text-white" />
+                  <CheckIcon className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-slate-800 mb-2">Money-Back Guarantee</h4>
                 <p className="text-slate-600 text-sm font-medium">30-day full refund if you&apos;re not satisfied</p>
               </div>
               <div>
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-light-md">
-                  <Users className="w-6 h-6 text-white" />
+                  <UsersIcon className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-slate-800 mb-2">50+ Students</h4>
                 <p className="text-slate-600 text-sm font-medium">Join successful IELTS candidates</p>
               </div>
               <div>
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-light-md">
-                  <Star className="w-6 h-6 text-white" />
+                  <StarIcon className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-slate-800 mb-2">4.9/5 Rating</h4>
                 <p className="text-slate-600 text-sm font-medium">Highest rated IELTS preparation platform</p>

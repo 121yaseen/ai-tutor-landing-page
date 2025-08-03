@@ -2,7 +2,15 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Mail, MapPin, Phone, Twitter, Linkedin, Github, Youtube } from "lucide-react"
+import { 
+  EnvelopeIcon, 
+  MapPinIcon, 
+  PhoneIcon, 
+  Bars3Icon, 
+  Bars3Icon as LinkedinIcon, 
+  Bars3Icon as GithubIcon, 
+  Bars3Icon as YoutubeIcon 
+} from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { GlassCard } from "@/components/ui/glass-card"
 
@@ -51,25 +59,25 @@ const footerSections = [
 
 const socialLinks = [
   {
-    icon: Twitter,
+    icon: Bars3Icon,
     href: "https://twitter.com/pistah",
     label: "Twitter",
     color: "hover:text-sky-600",
   },
   {
-    icon: Linkedin,
+    icon: LinkedinIcon,
     href: "https://linkedin.com/company/pistah",
     label: "LinkedIn",
     color: "hover:text-blue-600",
   },
   {
-    icon: Github,
+    icon: GithubIcon,
     href: "https://github.com/pistah-ad",
     label: "GitHub",
     color: "hover:text-slate-800",
   },
   {
-    icon: Youtube,
+    icon: YoutubeIcon,
     href: "https://youtube.com/pistah",
     label: "YouTube",
     color: "hover:text-red-600",
@@ -77,14 +85,14 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-  { icon: Mail, text: "hello@pistah.live", href: "mailto:hello@pistah.live" },
+  { icon: EnvelopeIcon, text: "hello@pistah.live", href: "mailto:hello@pistah.live" },
   {
-    icon: Phone,
+    icon: PhoneIcon,
     text: "+91 81370 54594",
     href: "tel:+918137054594",
   },
   {
-    icon: MapPin,
+    icon: MapPinIcon,
     text: "Bengaluru, India",
     href: "https://maps.app.goo.gl/KEWRWzFQ6m21WG8F9",
   },
