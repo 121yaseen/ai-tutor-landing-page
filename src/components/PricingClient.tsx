@@ -144,7 +144,7 @@ export default function PricingClient() {
             {plan.popular && (
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
                 <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-1.5 rounded-full text-sm font-bold flex items-center space-x-1 shadow-light-lg">
-                  <Star className="w-4 h-4" />
+                  <StarIcon className="w-4 h-4" />
                   <span>Most Popular</span>
                 </div>
               </div>
