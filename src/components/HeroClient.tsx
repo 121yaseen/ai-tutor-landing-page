@@ -1,7 +1,14 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { ArrowRight, Play, Star, Zap, Target, Users } from "lucide-react"
+import { 
+  ArrowRightIcon, 
+  PlayIcon, 
+  StarIcon, 
+  BoltIcon, 
+  PresentationChartBarIcon, 
+  UsersIcon 
+} from "@heroicons/react/24/solid"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -18,10 +25,10 @@ const floatingAnimation = {
 }
 
 const stats = [
-  { icon: Users, value: 50, suffix: "+", label: "Active Users" },
-  { icon: Target, value: 98, suffix: "%", label: "Success Rate" },
-  { icon: Star, value: 4.9, prefix: "", suffix: "/5", label: "Rating" },
-  { icon: Zap, value: 10, suffix: "x", label: "Faster Learning" }
+  { icon: UsersIcon, value: 50, suffix: "+", label: "Active Users" },
+  { icon: PresentationChartBarIcon, value: 98, suffix: "%", label: "Success Rate" },
+  { icon: StarIcon, value: 4.9, prefix: "", suffix: "/5", label: "Rating" },
+  { icon: BoltIcon, value: 10, suffix: "x", label: "Faster Learning" }
 ]
 
 export default function HeroClient() {
@@ -63,7 +70,7 @@ export default function HeroClient() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-5 py-2.5 shadow-light-sm">
-                  <Zap className="w-4 h-4 text-blue-600" />
+                  <BoltIcon className="w-4 h-4 text-blue-600" />
                   <span className="text-blue-700 text-sm font-semibold">AI-Powered IELTS Preparation</span>
                   <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
                 </div>
@@ -102,13 +109,13 @@ export default function HeroClient() {
                   <Button variant="primary" size="xl" className="group shadow-light-lg hover:shadow-light-xl">
                     <span className="flex items-center space-x-2">
                       <span>Start Free Trial</span>
-                      <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                      <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </span>
                   </Button>
                 </Link>
                 <Button variant="glass" size="xl" className="group">
                   <span className="flex items-center space-x-2">
-                    <Play className="w-5 h-5" />
+                    <PlayIcon className="w-5 h-5" />
                     <span>Watch Demo</span>
                   </span>
                 </Button>
@@ -138,7 +145,7 @@ export default function HeroClient() {
                 </div>
                 <div className="flex items-center space-x-1">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <StarIcon key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                   <span className="ml-2 font-medium">4.9/5 rating</span>
                 </div>
@@ -157,7 +164,7 @@ export default function HeroClient() {
                   <div className="space-y-6">
                     <div className="flex items-center space-x-3">
                       <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-light-md">
-                        <Target className="w-6 h-6 text-white" />
+                        <PresentationChartBarIcon className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-slate-800">Live Progress</h3>

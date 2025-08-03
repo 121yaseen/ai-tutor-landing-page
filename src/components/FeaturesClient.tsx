@@ -2,14 +2,27 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { BrainCircuit, Ear, Pencil, Users, BarChart, Sparkles, Target, Zap, Clock, Trophy, Globe, Shield } from "lucide-react"
+import { 
+  CpuChipIcon, 
+  SpeakerWaveIcon, 
+  PencilIcon, 
+  UsersIcon, 
+  ChartBarIcon, 
+  SparklesIcon, 
+  PresentationChartBarIcon, 
+  BoltIcon, 
+  ClockIcon, 
+  TrophyIcon, 
+  GlobeAltIcon, 
+  ShieldCheckIcon 
+} from "@heroicons/react/24/solid"
 import { GlassCard } from "@/components/ui/glass-card"
 import { AnimatedNumber } from "@/components/ui/animated-number"
 import Link from "next/link"
 
 const mainFeatures = [
   {
-    icon: BrainCircuit,
+    icon: CpuChipIcon,
     title: "AI-Powered Speaking Coach",
     description: "Advanced AI analyzes your pronunciation, fluency, and grammar in real-time, providing instant feedback and personalized improvement suggestions.",
     gradient: "from-purple-500 to-purple-600",
@@ -17,7 +30,7 @@ const mainFeatures = [
     stats: { value: 95, suffix: "%", label: "Accuracy Rate" }
   },
   {
-    icon: Ear,
+    icon: SpeakerWaveIcon,
     title: "Immersive Listening Modules",
     description: "Practice with authentic IELTS-style audio content featuring various accents and contexts, with adaptive difficulty based on your progress.",
     gradient: "from-blue-500 to-blue-600", 
@@ -25,7 +38,7 @@ const mainFeatures = [
     stats: { value: 12, suffix: "+", label: "Accent Types" }
   },
   {
-    icon: Pencil,
+    icon: PencilIcon,
     title: "Intelligent Writing Assistant",
     description: "Get detailed feedback on task achievement, coherence, lexical resource, and grammatical accuracy with AI-powered scoring.",
     gradient: "from-emerald-500 to-emerald-600",
@@ -33,7 +46,7 @@ const mainFeatures = [
     stats: { value: 8.5, suffix: "", label: "Avg Score Gain" }
   },
   {
-    icon: Target,
+    icon: PresentationChartBarIcon,
     title: "Reading Comprehension Pro",
     description: "Master all question types with strategic guidance, time management tips, and detailed explanations for every answer.",
     gradient: "from-indigo-500 to-indigo-600",
@@ -43,12 +56,12 @@ const mainFeatures = [
 ]
 
 const additionalFeatures = [
-  { icon: Users, title: "Live Partner Practice", description: "Connect with other students globally", color: "text-blue-600" },
-  { icon: BarChart, title: "Advanced Analytics", description: "Detailed progress tracking and insights", color: "text-indigo-600" },
-  { icon: Clock, title: "Flexible Scheduling", description: "Study at your own pace, anytime", color: "text-purple-600" },
-  { icon: Trophy, title: "Achievement System", description: "Gamified learning with rewards", color: "text-emerald-600" },
-  { icon: Globe, title: "Global Community", description: "Join 50+ active learners", color: "text-blue-600" },
-  { icon: Shield, title: "Score Guarantee", description: "Improve your score or money back", color: "text-indigo-600" }
+  { icon: UsersIcon, title: "Live Partner Practice", description: "Connect with other students globally", color: "text-blue-600" },
+  { icon: ChartBarIcon, title: "Advanced Analytics", description: "Detailed progress tracking and insights", color: "text-indigo-600" },
+  { icon: ClockIcon, title: "Flexible Scheduling", description: "Study at your own pace, anytime", color: "text-purple-600" },
+  { icon: TrophyIcon, title: "Achievement System", description: "Gamified learning with rewards", color: "text-emerald-600" },
+  { icon: GlobeAltIcon, title: "Global Community", description: "Join 50+ active learners", color: "text-blue-600" },
+  { icon: ShieldCheckIcon, title: "Score Guarantee", description: "Improve your score or money back", color: "text-indigo-600" }
 ]
 
 const containerVariants = {
@@ -117,7 +130,7 @@ export default function FeaturesClient() {
           className="text-center mb-20"
         >
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-5 py-2.5 mb-6 shadow-light-sm">
-            <Sparkles className="w-4 h-4 text-blue-600" />
+            <SparklesIcon className="w-4 h-4 text-blue-600" />
             <span className="text-blue-700 text-sm font-semibold">Powered by Advanced AI</span>
           </div>
           
@@ -194,7 +207,7 @@ export default function FeaturesClient() {
                         transition={{ duration: 1.5, delay: index * 0.3 }}
                       />
                     </div>
-                    <Zap className="w-4 h-4 text-blue-600" />
+                    <BoltIcon className="w-4 h-4 text-blue-600" />
                   </div>
                 </div>
               </GlassCard>
@@ -270,7 +283,7 @@ export default function FeaturesClient() {
                   </Link>
                   
                   <div className="flex items-center space-x-2 text-slate-500">
-                    <Shield className="w-5 h-5 text-emerald-500" />
+                    <ShieldCheckIcon className="w-5 h-5 text-emerald-500" />
                     <span className="text-sm font-medium">7-day free trial • No credit card required</span>
                   </div>
                 </div>

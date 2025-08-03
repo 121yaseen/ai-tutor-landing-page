@@ -1,16 +1,25 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Award, Users, Target, Zap, CheckCircle, Globe, TrendingUp, Star } from "lucide-react"
+import { 
+  CheckBadgeIcon, 
+  UsersIcon, 
+  PresentationChartBarIcon, 
+  BoltIcon, 
+  CheckCircleIcon, 
+  GlobeAltIcon, 
+  ArrowTrendingUpIcon, 
+  StarIcon 
+} from "@heroicons/react/24/solid"
 import { GlassCard } from "@/components/ui/glass-card"
 import { AnimatedNumber } from "@/components/ui/animated-number"
 import Image from "next/image"
 
 const achievements = [
-  { icon: Users, number: 50, suffix: "+", label: "Active Students", color: "text-blue-600", bg: "from-blue-100 to-blue-200" },
-  { icon: Globe, number: 20, suffix: "+", label: "Countries Served", color: "text-indigo-600", bg: "from-indigo-100 to-indigo-200" },
-  { icon: Target, number: 98, suffix: "%", label: "Success Rate", color: "text-emerald-600", bg: "from-emerald-100 to-emerald-200" },
-  { icon: TrendingUp, number: 4.9, suffix: "/5", label: "Average Rating", color: "text-purple-600", bg: "from-purple-100 to-purple-200" }
+  { icon: UsersIcon, number: 50, suffix: "+", label: "Active Students", color: "text-blue-600", bg: "from-blue-100 to-blue-200" },
+  { icon: GlobeAltIcon, number: 20, suffix: "+", label: "Countries Served", color: "text-indigo-600", bg: "from-indigo-100 to-indigo-200" },
+  { icon: PresentationChartBarIcon, number: 98, suffix: "%", label: "Success Rate", color: "text-emerald-600", bg: "from-emerald-100 to-emerald-200" },
+  { icon: ArrowTrendingUpIcon, number: 4.9, suffix: "/5", label: "Average Rating", color: "text-purple-600", bg: "from-purple-100 to-purple-200" }
 ]
 
 const credentials = [
@@ -57,7 +66,7 @@ export default function AboutClient() {
         className="text-center mb-20"
       >
         <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-5 py-2.5 mb-6 shadow-light-sm">
-          <Award className="w-4 h-4 text-blue-600" />
+          <CheckBadgeIcon className="w-4 h-4 text-blue-600" />
           <span className="text-blue-700 text-sm font-semibold">
             Award-Winning Platform
           </span>
@@ -134,7 +143,7 @@ export default function AboutClient() {
             <div className="p-8">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-light-md">
-                  <Zap className="w-6 h-6 text-white" />
+                  <BoltIcon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800">
                   Our Mission
@@ -165,7 +174,7 @@ export default function AboutClient() {
                     viewport={{ once: true }}
                     className="flex items-center space-x-3"
                   >
-                    <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                    <CheckCircleIcon className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                     <span className="text-slate-600 text-sm font-medium">
                       {credential}
                     </span>
@@ -187,7 +196,7 @@ export default function AboutClient() {
             <div className="p-8">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-light-md">
-                  <Users className="w-6 h-6 text-white" />
+                  <UsersIcon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800">
                   Expert Team
@@ -270,19 +279,19 @@ export default function AboutClient() {
 
               <div className="flex justify-center items-center space-x-8">
                 <div className="flex items-center space-x-2">
-                  <Star className="w-5 h-5 text-amber-500" />
+                  <StarIcon className="w-5 h-5 text-amber-500" />
                   <span className="text-slate-600 font-medium">
                     Innovation Award Winner
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-emerald-500" />
+                  <CheckCircleIcon className="w-5 h-5 text-emerald-500" />
                   <span className="text-slate-600 font-medium">
                     Google Cloud Partner
                   </span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Globe className="w-5 h-5 text-blue-500" />
+                  <GlobeAltIcon className="w-5 h-5 text-blue-500" />
                   <span className="text-slate-600 font-medium">
                     Global Impact
                   </span>

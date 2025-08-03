@@ -2,7 +2,15 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight, Star, Quote, Users, Trophy, Target } from "lucide-react"
+import { 
+  ChevronLeftIcon, 
+  ChevronRightIcon, 
+  StarIcon, 
+  Bars3Icon as QuoteIcon, 
+  UsersIcon, 
+  TrophyIcon, 
+  PresentationChartBarIcon 
+} from "@heroicons/react/24/solid"
 import { GlassCard } from "@/components/ui/glass-card"
 
 const testimonials = [
@@ -74,9 +82,9 @@ const testimonials = [
 ]
 
 const stats = [
-  { icon: Users, value: "50+", label: "Success Stories", color: "text-blue-600", bg: "from-blue-100 to-blue-200" },
-  { icon: Trophy, value: "8.2", label: "Average Score", color: "text-emerald-600", bg: "from-emerald-100 to-emerald-200" },
-  { icon: Target, value: "95%", label: "Goal Achievement", color: "text-purple-600", bg: "from-purple-100 to-purple-200" }
+  { icon: UsersIcon, value: "50+", label: "Success Stories", color: "text-blue-600", bg: "from-blue-100 to-blue-200" },
+  { icon: TrophyIcon, value: "8.2", label: "Average Score", color: "text-emerald-600", bg: "from-emerald-100 to-emerald-200" },
+  { icon: PresentationChartBarIcon, value: "95%", label: "Goal Achievement", color: "text-purple-600", bg: "from-purple-100 to-purple-200" }
 ]
 
 export default function TestimonialsClient() {
@@ -106,7 +114,7 @@ export default function TestimonialsClient() {
         className="text-center mb-16"
       >
         <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-50/80 to-purple-50/80 backdrop-blur-xl border border-indigo-200/50 rounded-full px-5 py-2.5 mb-6 shadow-light-sm">
-          <Star className="w-4 h-4 text-indigo-600" />
+          <StarIcon className="w-4 h-4 text-indigo-600" />
           <span className="text-indigo-700 text-sm font-semibold">Student Success Stories</span>
         </div>
         
@@ -171,7 +179,7 @@ export default function TestimonialsClient() {
                   <div className="space-y-6">
                     {/* Quote Icon */}
                     <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-purple-200 rounded-xl flex items-center justify-center shadow-light-md">
-                      <Quote className="w-8 h-8 text-indigo-600" />
+                      <QuoteIcon className="w-8 h-8 text-indigo-600" />
                     </div>
 
                     {/* Testimonial Content */}
@@ -207,7 +215,7 @@ export default function TestimonialsClient() {
                   <div className="space-y-6">
                     {/* Badge */}
                     <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-50 to-emerald-100 border border-emerald-200 rounded-full px-4 py-2 shadow-light-sm">
-                      <Trophy className="w-4 h-4 text-emerald-600" />
+                      <TrophyIcon className="w-4 h-4 text-emerald-600" />
                       <span className="text-emerald-700 text-sm font-semibold">
                         {testimonials[currentIndex].badge}
                       </span>
@@ -239,7 +247,7 @@ export default function TestimonialsClient() {
                     {/* Star Rating */}
                     <div className="flex justify-center items-center space-x-1">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="w-6 h-6 fill-amber-400 text-amber-400" />
+                        <StarIcon key={star} className="w-6 h-6 fill-amber-400 text-amber-400" />
                       ))}
                     </div>
                   </div>
@@ -255,7 +263,7 @@ export default function TestimonialsClient() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <ChevronLeft className="w-6 h-6 transition-transform group-hover:-translate-x-1" />
+            <ChevronLeftIcon className="w-6 h-6 transition-transform group-hover:-translate-x-1" />
           </motion.button>
 
           <motion.button
@@ -264,7 +272,7 @@ export default function TestimonialsClient() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+            <ChevronRightIcon className="w-6 h-6 transition-transform group-hover:translate-x-1" />
           </motion.button>
         </div>
 
