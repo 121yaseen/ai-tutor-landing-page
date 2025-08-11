@@ -215,7 +215,9 @@ export default function AboutClient() {
                       <Image
                         src={member.image}
                         alt={member.name}
-                        fill
+                        width={48}
+                        height={48}
+                        sizes="48px"
                         className="object-cover"
                       />
                     </div>
@@ -256,8 +258,10 @@ export default function AboutClient() {
                 <Image
                   src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Google_for_Startups_logo.svg"
                   alt="Google for Startups"
-                  width={500}
-                  height={500}
+                  width={300}
+                  height={60}
+                  sizes="(max-width: 768px) 250px, 300px"
+                  className="h-auto w-auto max-w-[300px]"
                 />
               </div>
 

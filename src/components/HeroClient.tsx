@@ -134,8 +134,11 @@ export default function HeroClient() {
                         <Image
                           src={`/user-pic-small/user ${i}.png`}
                           alt={`User ${i}`}
-                          fill
+                          width={32}
+                          height={32}
+                          sizes="32px"
                           className="object-cover"
+                          priority={i <= 2}
                         />
                       </div>
                     ))}

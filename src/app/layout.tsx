@@ -61,6 +61,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://upload.wikimedia.org" />
+        <link rel="dns-prefetch" href="https://upload.wikimedia.org" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
