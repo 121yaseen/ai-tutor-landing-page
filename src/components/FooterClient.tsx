@@ -5,12 +5,9 @@ import { motion } from "framer-motion"
 import { 
   EnvelopeIcon, 
   MapPinIcon, 
-  PhoneIcon, 
-  Bars3Icon, 
-  Bars3Icon as LinkedinIcon, 
-  Bars3Icon as GithubIcon, 
-  Bars3Icon as YoutubeIcon 
+  PhoneIcon,
 } from "@heroicons/react/24/solid"
+import { Instagram } from "lucide-react"
 import Image from "next/image"
 import { GlassCard } from "@/components/ui/glass-card"
 
@@ -59,27 +56,9 @@ const footerSections = [
 
 const socialLinks = [
   {
-    icon: Bars3Icon,
-    href: "https://twitter.com/pistah",
-    label: "Twitter",
-    color: "hover:text-sky-600",
-  },
-  {
-    icon: LinkedinIcon,
-    href: "https://linkedin.com/company/pistah",
-    label: "LinkedIn",
-    color: "hover:text-blue-600",
-  },
-  {
-    icon: GithubIcon,
-    href: "https://github.com/pistah-ad",
-    label: "GitHub",
-    color: "hover:text-slate-800",
-  },
-  {
-    icon: YoutubeIcon,
-    href: "https://youtube.com/pistah",
-    label: "YouTube",
+    icon: Instagram,
+    href: "https://www.instagram.com/pistah.live/",
+    label: "Instagram",
     color: "hover:text-red-600",
   },
 ];
