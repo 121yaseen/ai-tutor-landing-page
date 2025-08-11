@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simplified Google for Startups wordmark (monochrome) for caching and performance. For official branding, replace with the full SVG. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 96" role="img" aria-label="Google for Startups">
+  <title>Google for Startups</title>
+  <g fill="#111827">
+    <rect x="0" y="36" width="40" height="8" rx="2" />
+    <rect x="48" y="36" width="40" height="8" rx="2" />
+    <rect x="96" y="36" width="40" height="8" rx="2" />
+    <rect x="144" y="36" width="40" height="8" rx="2" />
+    <rect x="192" y="36" width="40" height="8" rx="2" />
+    <rect x="240" y="36" width="40" height="8" rx="2" />
+    <text x="296" y="44" font-family="system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'" font-size="28" font-weight="700">Google for Startups</text>
+  </g>
+</svg>
+

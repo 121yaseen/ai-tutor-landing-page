@@ -46,7 +46,7 @@ const nextConfig: NextConfig = {
         ]
       },
       {
-        source: "/user-pic-small/:path*",
+        source: "/:static(leadership|user-pic-small|_next/static)/:path*",
         headers: [
           {
             key: "Cache-Control",
@@ -55,12 +55,9 @@ const nextConfig: NextConfig = {
         ]
       },
       {
-        source: "/leadership/:path*",
+        source: "/:static(svg|images)/:path*",
         headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable"
-          }
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" }
         ]
       }
     ];

@@ -104,8 +104,8 @@ export default function TestimonialsClient() {
   }
 
   useEffect(() => {
-    const timer = setInterval(nextTestimonial, 5000)
-    return () => clearInterval(timer)
+    const timer = window.setInterval(nextTestimonial, 6000)
+    return () => window.clearInterval(timer)
   }, [])
 
   return (
@@ -263,7 +263,8 @@ export default function TestimonialsClient() {
           {/* Navigation Buttons */}
           <motion.button
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 backdrop-blur-xl border border-slate-200 rounded-full flex items-center justify-center text-slate-600 hover:bg-white hover:text-slate-800 transition-all duration-300 group shadow-light-md hover:shadow-light-lg"
+            aria-label="Previous testimonial"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 min-w-[44px] min-h-[44px] bg-white/80 backdrop-blur-xl border border-slate-200 rounded-full flex items-center justify-center text-slate-600 hover:bg-white hover:text-slate-800 transition-all duration-300 group shadow-light-md hover:shadow-light-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -272,7 +273,8 @@ export default function TestimonialsClient() {
 
           <motion.button
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 backdrop-blur-xl border border-slate-200 rounded-full flex items-center justify-center text-slate-600 hover:bg-white hover:text-slate-800 transition-all duration-300 group shadow-light-md hover:shadow-light-lg"
+            aria-label="Next testimonial"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 min-w-[44px] min-h-[44px] bg-white/80 backdrop-blur-xl border border-slate-200 rounded-full flex items-center justify-center text-slate-600 hover:bg-white hover:text-slate-800 transition-all duration-300 group shadow-light-md hover:shadow-light-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -286,7 +288,8 @@ export default function TestimonialsClient() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              aria-label={`Go to testimonial ${index + 1}`}
+              className={`w-3 h-3 min-w-[12px] min-h-[12px] rounded-full transition-all duration-300 ${
                 index === currentIndex
                   ? "bg-indigo-600 scale-125 shadow-light-sm"
                   : "bg-slate-300 hover:bg-slate-400"

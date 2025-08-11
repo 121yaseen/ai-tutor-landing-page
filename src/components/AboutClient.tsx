@@ -72,18 +72,20 @@ export default function AboutClient() {
           </span>
         </div>
 
-         <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
-           <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent">
-             Built for High‑Stakes IELTS
-           </span>
-           <br />
-           <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-             Know Your Score Before Test Day
-           </span>
-         </h2>
+        <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+          <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent">
+            Built for High‑Stakes IELTS
+          </span>
+          <br />
+          <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            Know Your Score Before Test Day
+          </span>
+        </h2>
 
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
-          We focus on the candidate’s real goal: a target band by a deadline. Our AI examiner reduces uncertainty with 92% accurate predictions and tactical fixes — especially for Writing and Speaking.
+          We focus on the candidate’s real goal: a target band by a deadline.
+          Our AI examiner reduces uncertainty with 92% accurate predictions and
+          tactical fixes — especially for Writing and Speaking.
         </p>
       </motion.div>
 
@@ -110,9 +112,7 @@ export default function AboutClient() {
               <div
                 className={`w-16 h-16 bg-gradient-to-br ${achievement.bg} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-light-md`}
               >
-                <achievement.icon
-                  className={`w-8 h-8 ${achievement.color}`}
-                />
+                <achievement.icon className={`w-8 h-8 ${achievement.color}`} />
               </div>
               <div className="text-3xl font-bold text-slate-800 mb-2">
                 <AnimatedNumber
@@ -143,15 +143,19 @@ export default function AboutClient() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-light-md">
                   <BoltIcon className="w-6 h-6 text-white" />
                 </div>
-                 <h3 className="text-2xl font-bold text-slate-800">Our Mission</h3>
+                <h3 className="text-2xl font-bold text-slate-800">
+                  Our Mission
+                </h3>
               </div>
 
               <p className="text-slate-600 leading-relaxed mb-6 font-medium">
-                Replace guesswork with certainty. Predict your real test score before test day and fix exactly what holds you at 6.5.
+                Replace guesswork with certainty. Predict your real test score
+                before test day and fix exactly what holds you at 6.5.
               </p>
 
               <p className="text-slate-600 leading-relaxed mb-6 font-medium">
-                Candidates across the Globe use Pistah to convert anxiety into a plan: practice, predict, improve, repeat.
+                Candidates across the Globe use Pistah to convert anxiety into a
+                plan: practice, predict, improve, repeat.
               </p>
 
               <div className="space-y-3">
@@ -200,7 +204,7 @@ export default function AboutClient() {
               </p>
 
               <div className="space-y-6">
-                 {teamMembers.map((member, index) => (
+                {teamMembers.map((member, index) => (
                   <motion.div
                     key={member.name}
                     initial={{ opacity: 0, y: 10 }}
@@ -256,7 +260,7 @@ export default function AboutClient() {
             <div className="relative z-10">
               <div className="flex items-center justify-center space-x-4 mb-6">
                 <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Google_for_Startups_logo.svg"
+                  src="/Google_for_Startups_logo.svg"
                   alt="Google for Startups"
                   width={300}
                   height={60}
@@ -274,11 +278,15 @@ export default function AboutClient() {
               <div className="flex justify-center items-center space-x-8">
                 <div className="flex items-center space-x-2">
                   <StarIcon className="w-5 h-5 text-amber-500" />
-                   <span className="text-slate-600 font-medium">Innovation Award Winner</span>
+                  <span className="text-slate-600 font-medium">
+                    Innovation Award Winner
+                  </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircleIcon className="w-5 h-5 text-emerald-500" />
-                   <span className="text-slate-600 font-medium">Google Cloud Partner</span>
+                  <span className="text-slate-600 font-medium">
+                    Google Cloud Partner
+                  </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <GlobeAltIcon className="w-5 h-5 text-blue-500" />
@@ -292,5 +300,5 @@ export default function AboutClient() {
         </GlassCard>
       </motion.div>
     </>
-  )
+  );
 }
