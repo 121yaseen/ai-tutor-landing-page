@@ -8,10 +8,10 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
+  { name: "Why Pistah", href: "#about" },
   { name: "Features", href: "#features" },
   { name: "Pricing", href: "#pricing" },
   { name: "Testimonials", href: "#testimonials" },
-  { name: "About", href: "#about" },
 ]
 
 export default function NavbarClient() {
@@ -84,7 +84,7 @@ export default function NavbarClient() {
             </Link>
             <Link href="https://learn.pistah.live">
               <Button variant="primary" size="sm" className="relative group overflow-hidden">
-                <span className="relative z-10">Start Free Trial</span>
+                <span className="relative z-10">Claim Free Beta</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl" />
               </Button>
             </Link>
@@ -147,7 +147,7 @@ export default function NavbarClient() {
                   </Link>
                   <Link href="https://learn.pistah.live">
                     <Button variant="primary" size="sm" className="w-full">
-                      Start Free Trial
+                      Claim Free Beta
                     </Button>
                   </Link>
                 </div>

@@ -16,10 +16,10 @@ import { AnimatedNumber } from "@/components/ui/animated-number"
 import Image from "next/image"
 
 const achievements = [
-  { icon: UsersIcon, number: 50, suffix: "+", label: "Active Students", color: "text-blue-600", bg: "from-blue-100 to-blue-200" },
-  { icon: GlobeAltIcon, number: 20, suffix: "+", label: "Countries Served", color: "text-indigo-600", bg: "from-indigo-100 to-indigo-200" },
-  { icon: PresentationChartBarIcon, number: 98, suffix: "%", label: "Success Rate", color: "text-emerald-600", bg: "from-emerald-100 to-emerald-200" },
-  { icon: ArrowTrendingUpIcon, number: 4.9, suffix: "/5", label: "Average Rating", color: "text-purple-600", bg: "from-purple-100 to-purple-200" }
+  { icon: UsersIcon, number: 50, suffix: "+", label: "Active Candidates", color: "text-blue-600", bg: "from-blue-100 to-blue-200" },
+  { icon: GlobeAltIcon, number: 92, suffix: "%", label: "Prediction Accuracy", color: "text-indigo-600", bg: "from-indigo-100 to-indigo-200" },
+  { icon: PresentationChartBarIcon, number: 100, suffix: "", label: "Free Beta Seats", color: "text-emerald-600", bg: "from-emerald-100 to-emerald-200" },
+  { icon: ArrowTrendingUpIcon, number: 4.9, suffix: "/5", label: "User Rating", color: "text-purple-600", bg: "from-purple-100 to-purple-200" }
 ]
 
 const credentials = [
@@ -49,7 +49,7 @@ const teamMembers = [
     name: "Sony George",
     role: "Academic Advisor",
     background: "IELTS Content Specialist",
-    image: "/user-pic-small/user 3.png",
+    image: "/leadership/sony.png",
     bg: "from-purple-500 to-purple-600"
   }
 ]
@@ -72,20 +72,18 @@ export default function AboutClient() {
           </span>
         </div>
 
-        <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
-          <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent">
-            Trusted by Hundreds
-          </span>
-          <br />
-          <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            Worldwide
-          </span>
-        </h2>
+         <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+           <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent">
+             Built for High‑Stakes IELTS
+           </span>
+           <br />
+           <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+             Know Your Score Before Test Day
+           </span>
+         </h2>
 
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
-          Founded by IELTS experts and powered by cutting-edge AI technology,
-          Pistah is revolutionizing how students prepare for and ace the IELTS
-          exam.
+          We focus on the candidate’s real goal: a target band by a deadline. Our AI examiner reduces uncertainty with 92% accurate predictions and tactical fixes — especially for Writing and Speaking.
         </p>
       </motion.div>
 
@@ -145,23 +143,15 @@ export default function AboutClient() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-light-md">
                   <BoltIcon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-800">
-                  Our Mission
-                </h3>
+                 <h3 className="text-2xl font-bold text-slate-800">Our Mission</h3>
               </div>
 
               <p className="text-slate-600 leading-relaxed mb-6 font-medium">
-                We believe that language barriers shouldn&apos;t limit
-                anyone&apos;s potential. That&apos;s why we created Pistah -
-                to democratize access to world-class IELTS preparation through
-                the power of artificial intelligence.
+                Replace guesswork with certainty. Predict your real test score before test day and fix exactly what holds you at 6.5.
               </p>
 
               <p className="text-slate-600 leading-relaxed mb-6 font-medium">
-                Our AI-powered platform has helped over 50 students from 20+
-                countries achieve their dream IELTS scores, opening doors to
-                top universities, immigration opportunities, and career
-                advancement worldwide.
+                Candidates across the Globe use Pistah to convert anxiety into a plan: practice, predict, improve, repeat.
               </p>
 
               <div className="space-y-3">
@@ -210,7 +200,7 @@ export default function AboutClient() {
               </p>
 
               <div className="space-y-6">
-                {teamMembers.map((member, index) => (
+                 {teamMembers.map((member, index) => (
                   <motion.div
                     key={member.name}
                     initial={{ opacity: 0, y: 10 }}
@@ -280,15 +270,11 @@ export default function AboutClient() {
               <div className="flex justify-center items-center space-x-8">
                 <div className="flex items-center space-x-2">
                   <StarIcon className="w-5 h-5 text-amber-500" />
-                  <span className="text-slate-600 font-medium">
-                    Innovation Award Winner
-                  </span>
+                   <span className="text-slate-600 font-medium">Innovation Award Winner</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircleIcon className="w-5 h-5 text-emerald-500" />
-                  <span className="text-slate-600 font-medium">
-                    Google Cloud Partner
-                  </span>
+                   <span className="text-slate-600 font-medium">Google Cloud Partner</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <GlobeAltIcon className="w-5 h-5 text-blue-500" />

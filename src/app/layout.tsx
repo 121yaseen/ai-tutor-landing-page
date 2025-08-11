@@ -16,14 +16,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pistah.live"),
-  title: "Pistah - AI-Powered IELTS Practice",
+  title: "Pistah AI — Know Your IELTS Score Before Test Day",
   description:
-    "Your personal AI tutor for IELTS success. Practice Speaking, Listening, Writing, and Reading with real-time feedback.",
+    "AI examiner for IELTS Speaking & Writing with 92% accurate score prediction. Break the 6.5 barrier with targeted feedback and unlimited mock tests (beta).",
   keywords: [
     "IELTS",
-    "AI tutor",
-    "IELTS practice",
-    "public speaking",
+    "IELTS score prediction",
+    "AI examiner",
+    "92% accuracy",
+    "break 6.5 writing",
+    "IELTS speaking",
+    "IELTS writing",
+    "mock tests",
+    "band score",
     "language learning",
   ],
   authors: [{ name: "Muhammed Yaseen", url: "https://yaseen.site" }],
@@ -32,9 +37,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://pistah.live",
-    title: "Pistah - AI-Powered IELTS Practice",
+    title: "Pistah AI — Know Your IELTS Score Before Test Day",
     description:
-      "Your personal AI tutor for IELTS success. Practice Speaking, Listening, Writing, and Reading with real-time feedback.",
+      "92% accurate band score prediction for IELTS Speaking & Writing. Unlimited mock tests for the first 100 users. Break the 6.5 barrier with targeted feedback.",
     images: [
       {
         url: "/opengraph-image.png",

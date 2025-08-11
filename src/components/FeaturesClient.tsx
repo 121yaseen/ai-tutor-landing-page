@@ -23,36 +23,40 @@ import Link from "next/link"
 const mainFeatures = [
   {
     icon: CpuChipIcon,
-    title: "AI-Powered Speaking Coach",
-    description: "Advanced AI analyzes your pronunciation, fluency, and grammar in real-time, providing instant feedback and personalized improvement suggestions.",
+    title: "92% Accurate Band Score Prediction",
+    description:
+      "Objective IELTS Speaking & Writing scoring trained on examiner criteria. Get a predicted band score before test day — with confidence.",
     gradient: "from-purple-500 to-purple-600",
     lightGradient: "from-purple-500/10 to-purple-600/10",
-    stats: { value: 95, suffix: "%", label: "Accuracy Rate" }
+    stats: { value: 92, suffix: "%", label: "Prediction Accuracy" },
   },
   {
     icon: SpeakerWaveIcon,
-    title: "Immersive Listening Modules",
-    description: "Practice with authentic IELTS-style audio content featuring various accents and contexts, with adaptive difficulty based on your progress.",
-    gradient: "from-blue-500 to-blue-600", 
+    title: "Break the 6.5 Writing Barrier",
+    description:
+      "Pinpoint why you’re stuck at 6.5 with granular feedback on Task Response, Coherence, Lexical Resource, and Grammar — plus exact fixes.",
+    gradient: "from-blue-500 to-blue-600",
     lightGradient: "from-blue-500/10 to-blue-600/10",
-    stats: { value: 12, suffix: "+", label: "Accent Types" }
+    stats: { value: 7, suffix: "+", label: "Avg Writing Lift Targets" },
   },
   {
     icon: PencilIcon,
-    title: "Intelligent Writing Assistant",
-    description: "Get detailed feedback on task achievement, coherence, lexical resource, and grammatical accuracy with AI-powered scoring.",
+    title: "Unlimited Mock Tests (Beta)",
+    description:
+      "Free for the first 100 users. Practice without limits, reduce uncertainty, and track how your predicted score improves over time.",
     gradient: "from-emerald-500 to-emerald-600",
     lightGradient: "from-emerald-500/10 to-emerald-600/10",
-    stats: { value: 8.5, suffix: "", label: "Avg Score Gain" }
+    stats: { value: 100, suffix: "%", label: "Practice Freedom" },
   },
   {
     icon: PresentationChartBarIcon,
-    title: "Reading Comprehension Pro",
-    description: "Master all question types with strategic guidance, time management tips, and detailed explanations for every answer.",
+    title: "Speaking Confidence Builder",
+    description:
+      "Mock examiner for fluency, coherence, pronunciation, and lexical range — with tactical prompts to upgrade to Band 7+ responses.",
     gradient: "from-indigo-500 to-indigo-600",
     lightGradient: "from-indigo-500/10 to-indigo-600/10",
-    stats: { value: 87, suffix: "%", label: "Pass Rate" }
-  }
+    stats: { value: 8, suffix: ".0", label: "Target Speaking Score" },
+  },
 ]
 
 const additionalFeatures = [
@@ -131,22 +135,21 @@ export default function FeaturesClient() {
         >
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-5 py-2.5 mb-6 shadow-light-sm">
             <SparklesIcon className="w-4 h-4 text-blue-600" />
-            <span className="text-blue-700 text-sm font-semibold">Powered by Advanced AI</span>
+            <span className="text-blue-700 text-sm font-semibold">92% Prediction Accuracy</span>
           </div>
           
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
             <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent">
-              Revolutionary Features
+              End the Guesswork
             </span>
             <br />
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Built for Success
+              Know Your Score
             </span>
           </h2>
           
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
-            Experience the future of IELTS preparation with our cutting-edge AI technology 
-            that adapts to your learning style and accelerates your progress.
+            For candidates on a deadline: predict your real test score, fix exactly what holds you back, and hit your target band with confidence.
           </p>
         </motion.div>
 
@@ -224,10 +227,10 @@ export default function FeaturesClient() {
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-slate-800 mb-4">
-              Everything You Need to Excel
+              Built for High‑Stakes, Goal‑Oriented Prep
             </h3>
             <p className="text-slate-600 max-w-2xl mx-auto font-medium">
-              Comprehensive tools and features designed to cover every aspect of IELTS preparation
+              Designed for candidates on a deadline. Predict, practice, and fix what matters for your target band.
             </p>
           </div>
 

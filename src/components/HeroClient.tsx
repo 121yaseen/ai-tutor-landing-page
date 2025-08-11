@@ -25,10 +25,10 @@ const floatingAnimation = {
 }
 
 const stats = [
-  { icon: UsersIcon, value: 50, suffix: "+", label: "Active Users" },
-  { icon: PresentationChartBarIcon, value: 98, suffix: "%", label: "Success Rate" },
+  { icon: UsersIcon, value: 50, suffix: "+", label: "Active Learners" },
+  { icon: PresentationChartBarIcon, value: 92, suffix: "%", label: "Prediction Accuracy" },
   { icon: StarIcon, value: 4.9, prefix: "", suffix: "/5", label: "Rating" },
-  { icon: BoltIcon, value: 10, suffix: "x", label: "Faster Learning" }
+  { icon: BoltIcon, value: 100, suffix: "+", label: "Free Beta Seats" },
 ]
 
 export default function HeroClient() {
@@ -71,7 +71,7 @@ export default function HeroClient() {
               >
                 <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border border-blue-200/50 rounded-full px-5 py-2.5 shadow-light-sm">
                   <BoltIcon className="w-4 h-4 text-blue-600" />
-                  <span className="text-blue-700 text-sm font-semibold">AI-Powered IELTS Preparation</span>
+                  <span className="text-blue-700 text-sm font-semibold">92% Accurate Score Prediction</span>
                   <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
                 </div>
               </motion.div>
@@ -85,16 +85,15 @@ export default function HeroClient() {
               >
                 <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
                   <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent">
-                    Master IELTS with
+                    Know Your IELTS Score
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                    AI Precision
+                    Before Test Day
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-slate-600 max-w-2xl leading-relaxed font-medium">
-                  Revolutionary AI-driven personalized coaching that adapts to your learning style. 
-                  Achieve your target IELTS score 10x faster with our intelligent practice system.
+                  92% accurate band score prediction for Speaking & Writing. Break the 6.5 barrier with targeted, objective feedback and unlimited mock tests (beta).
                 </p>
               </motion.div>
 
@@ -108,7 +107,7 @@ export default function HeroClient() {
                 <Link href="https://learn.pistah.live">
                   <Button variant="primary" size="xl" className="group shadow-light-lg hover:shadow-light-xl">
                     <span className="flex items-center space-x-2">
-                      <span>Start Free Trial</span>
+                      <span>Claim Free Beta</span>
                       <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </span>
                   </Button>
@@ -141,7 +140,7 @@ export default function HeroClient() {
                       </div>
                     ))}
                   </div>
-                  <span className="font-medium">50+ students trust us</span>
+                  <span className="font-medium">First 100 users get free unlimited beta</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   {[1, 2, 3, 4, 5].map((i) => (

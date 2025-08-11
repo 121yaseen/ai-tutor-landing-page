@@ -15,68 +15,62 @@ import { GlassCard } from "@/components/ui/glass-card"
 
 const plans = [
   {
-    name: "Starter",
+    name: "Beta Access",
     icon: SparklesIcon,
     price: 0,
-    period: "Free forever",
-    description: "Perfect for getting started with IELTS preparation",
+    period: "Free for first 100 users",
+    description: "Unlimited mock tests while in beta. Perfect for fast prep on a deadline.",
     features: [
-      "5 AI speaking sessions per week",
-      "Basic progress tracking",
+      "Unlimited Speaking & Writing mock tests",
+      "92% accurate band prediction",
+      "Targeted feedback to break 6.5",
+      "Progress tracking & history",
       "Community support",
-      "Mobile app access",
-      "Basic study materials"
     ],
-    cta: "Start Free",
+    cta: "Claim Free Access",
     variant: "outline" as const,
     popular: false,
     iconColor: "text-blue-600",
-    iconBg: "from-blue-100 to-blue-200"
+    iconBg: "from-blue-100 to-blue-200",
   },
   {
     name: "Pro",
     icon: BoltIcon,
     price: 29,
     period: "per month",
-    description: "Advanced features for serious IELTS candidates",
+    description: "For serious candidates who want certainty and speed.",
     features: [
-      "Unlimited AI speaking practice",
-      "All 4 skills (Speaking, Writing, Reading, Listening)",
-      "Personalized study plan",
-      "Advanced analytics & insights",
+      "Unlimited Speaking & Writing",
+      "Band score prediction with confidence bands",
+      "Deep-dive analytics & error patterns",
+      "Band 7+ prompt upgrades & examples",
       "Priority support",
-      "Mock test simulations",
-      "Score prediction algorithm",
-      "Offline practice mode"
     ],
     cta: "Start Pro Trial",
     variant: "primary" as const,
-    popular: true,
+    popular: false,
     iconColor: "text-white",
-    iconBg: "from-blue-500 to-indigo-600"
+    iconBg: "from-blue-500 to-indigo-600",
   },
   {
     name: "Enterprise",
     icon: CrownIcon,
     price: null,
     period: "Custom pricing",
-    description: "Tailored solution for institutions and organizations",
+    description: "Institutions, academies, and partners.",
     features: [
-      "Everything in Pro",
-      "Bulk user management",
-      "Custom branding",
-      "API access",
-      "Dedicated account manager",
+      "Bulk seats & admin",
+      "Custom rubrics & branding",
+      "API & SSO",
+      "Dedicated CSM",
       "Advanced reporting",
-      "SSO integration",
-      "Custom integrations"
     ],
     cta: "Contact Sales",
     variant: "glass" as const,
     popular: false,
     iconColor: "text-purple-600",
-    iconBg: "from-purple-100 to-purple-200"
-  }
+    iconBg: "from-purple-100 to-purple-200",
+  },
 ]
 
 const containerVariants = {
@@ -111,17 +105,16 @@ export default function PricingClient() {
         
         <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
           <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent">
-            Choose Your
+            Choose Certainty
           </span>
           <br />
           <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            Success Plan
+            For Your Target Band
           </span>
         </h2>
         
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
-          Start free, upgrade when you&apos;re ready. All plans include our core AI technology 
-          and are designed to help you achieve your target IELTS score.
+          Start free in beta. Predict, practice, and improve with objective feedback designed to hit your target IELTS band.
         </p>
       </motion.div>
 

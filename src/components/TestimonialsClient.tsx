@@ -15,70 +15,75 @@ import { GlassCard } from "@/components/ui/glass-card"
 
 const testimonials = [
   {
-    name: "Sarah Ahmed",
-    role: "Medical Student",
-    location: "Dubai, UAE",
-    score: "8.5",
-    previousScore: "6.0",
+    name: "Amrita Singh",
+    role: "Postgrad Applicant",
+    location: "Delhi, India",
+    score: "7.5",
+    previousScore: "6.5",
     image: "/placeholder-testimonial-1.jpg",
-    content: "Pistah's AI coaching completely transformed my speaking confidence. The real-time feedback helped me identify and fix pronunciation issues I never knew I had. Within 3 months, I went from band 6.0 to 8.5!",
-    highlight: "2.5 point improvement",
-    university: "Stanford Medical School",
-    badge: "Top Performer",
-    bg: "from-blue-500 to-blue-600"
+    content:
+      "Got stuck at 6.5 in Writing twice. Pistah showed me exactly why — repetition in Task Response and weak cohesion. After 10 mocks, my predicted score moved to 7.5. Test day matched it.",
+    highlight: "Broke the 6.5 wall",
+    university: "University of British Columbia",
+    badge: "Writing Upgrade",
+    bg: "from-blue-500 to-blue-600",
   },
   {
     name: "Miguel Rodriguez",
-    role: "Software Engineer", 
+    role: "Software Engineer",
     location: "Barcelona, Spain",
-    score: "9.0",
+    score: "8.0",
     previousScore: "7.0",
     image: "/placeholder-testimonial-2.jpg",
-    content: "The writing module's AI feedback is incredibly detailed. It helped me understand Task Achievement and Coherence at a deeper level. Perfect score in writing - couldn't believe it!",
-    highlight: "Perfect 9.0 in Writing",
+    content:
+      "The Speaking examiner feedback felt like a real interview. The prediction said 8.0 with confidence 7.5–8.5 — my result was 8.0. Most helpful part: tactical prompts to upgrade answers.",
+    highlight: "Confidence band matched",
     university: "Google Canada",
-    badge: "Success Story",
-    bg: "from-indigo-500 to-indigo-600"
+    badge: "Speaking 8.0",
+    bg: "from-indigo-500 to-indigo-600",
   },
   {
-    name: "Priya Patel",
-    role: "Research Scientist",
-    location: "Mumbai, India", 
-    score: "8.0",
-    previousScore: "6.5",
+    name: "Ainuu Batbayar",
+    role: "Immigration Applicant",
+    location: "Ulaanbaatar, Mongolia",
+    score: "7.0",
+    previousScore: "6.0",
     image: "/placeholder-testimonial-3.jpg",
-    content: "The listening practice with different accents was game-changing. I struggled with Australian and Canadian accents, but Pistah's adaptive system helped me master them all.",
-    highlight: "Mastered all accents",
-    university: "University of Toronto",
-    badge: "Accent Master",
-    bg: "from-purple-500 to-purple-600"
-  },
-  {
-    name: "David Chen",
-    role: "Business Analyst",
-    location: "Singapore",
-    score: "8.5", 
-    previousScore: "7.5",
-    image: "/placeholder-testimonial-4.jpg",
-    content: "The progress tracking and analytics gave me clear insights into my weaknesses. The personalized study plan was spot-on. Achieved my target score 2 months ahead of schedule!",
-    highlight: "2 months early",
-    university: "London Business School",
-    badge: "Fast Track",
-    bg: "from-emerald-500 to-emerald-600"
-  },
-  {
-    name: "Emma Thompson",
-    role: "Marketing Manager",
-    location: "Sydney, Australia",
-    score: "8.5",
-    previousScore: "6.0", 
-    image: "/placeholder-testimonial-5.jpg",
-    content: "As a working professional, I needed flexible study options. Pistah's 24/7 AI tutor was perfect. I could practice during lunch breaks and get immediate feedback.",
-    highlight: "2.5 band improvement",
+    content:
+      "Two weeks of beta access, unlimited mocks. I learned exactly what errors repeat in my writing and fixed them. Prediction 7.0, final result 7.0.",
+    highlight: "2 weeks, +1 band",
     university: "Permanent Residency",
-    badge: "Working Professional",
-    bg: "from-blue-500 to-indigo-600"
-  }
+    badge: "Fast Track",
+    bg: "from-purple-500 to-purple-600",
+  },
+  {
+    name: "Joanna Lee",
+    role: "Nurse",
+    location: "Manila, Philippines",
+    score: "7.5",
+    previousScore: "6.5",
+    image: "/placeholder-testimonial-4.jpg",
+    content:
+      "I needed 7.5 for registration. Pistah’s objective scoring removed the guesswork. I practiced nightly, watched the prediction climb, and hit my target.",
+    highlight: "Hit target band",
+    university: "Professional Registration",
+    badge: "Goal Achieved",
+    bg: "from-emerald-500 to-emerald-600",
+  },
+  {
+    name: "Arman Khan",
+    role: "Undergrad Applicant",
+    location: "Dhaka, Bangladesh",
+    score: "7.0",
+    previousScore: "6.0",
+    image: "/placeholder-testimonial-5.jpg",
+    content:
+      "I had 10 days. Unlimited mocks let me focus on weak areas fast. The prediction was 7.0, and it was spot on. Most honest tool I tried.",
+    highlight: "Deadline success",
+    university: "Canadian Universities",
+    badge: "Short Sprint",
+    bg: "from-blue-500 to-indigo-600",
+  },
 ]
 
 const stats = [
@@ -115,7 +120,7 @@ export default function TestimonialsClient() {
       >
         <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-50/80 to-purple-50/80 backdrop-blur-xl border border-indigo-200/50 rounded-full px-5 py-2.5 mb-6 shadow-light-sm">
           <StarIcon className="w-4 h-4 text-indigo-600" />
-          <span className="text-indigo-700 text-sm font-semibold">Student Success Stories</span>
+          <span className="text-indigo-700 text-sm font-semibold">Test Experience Results</span>
         </div>
         
         <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
@@ -124,13 +129,12 @@ export default function TestimonialsClient() {
           </span>
           <br />
           <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Real Students
+            Real Results
           </span>
         </h2>
         
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
-          Discover how our AI-powered platform has helped thousands of students 
-          achieve their dream IELTS scores and unlock new opportunities worldwide.
+          Success stories in the same format IELTS candidates trust: real results with predicted vs final bands.
         </p>
       </motion.div>
 

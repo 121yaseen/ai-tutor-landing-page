@@ -125,9 +125,8 @@ export default function FooterClient() {
               </div>
 
               <p className="text-slate-600 leading-relaxed max-w-md font-medium">
-                Revolutionizing IELTS preparation with AI-powered coaching. 
-                Join 50+ students who have achieved their dream scores with our 
-                intelligent platform.
+                AI examiner for IELTS Speaking & Writing with 92% accurate score prediction. 
+                Break the 6.5 barrier and know your score before test day.
               </p>
 
               {/* Contact Information */}
@@ -214,27 +213,33 @@ export default function FooterClient() {
       >
         <GlassCard variant="strong" className="p-8 text-center">
           <div className="max-w-2xl mx-auto space-y-4">
-            <h3 className="text-2xl font-bold text-slate-800">
-              Stay Updated with IELTS Tips & News
-            </h3>
+             <h3 className="text-2xl font-bold text-slate-800">Get early beta invites and score-improvement tactics</h3>
             <p className="text-slate-600 font-medium">
-              Get expert IELTS preparation tips, study strategies, and platform updates 
-              delivered straight to your inbox.
+               Be first to access unlimited mocks in beta and receive weekly, tactical advice to move from 6.5 → 7.5.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form
+              action="https://formspree.io/f/mkgzynzv"
+              method="POST"
+              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+            >
               <input
                 type="email"
+                name="email"
+                required
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 bg-white/80 backdrop-blur-sm border border-slate-300 rounded-xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-light-sm font-medium"
               />
               <motion.button
+                type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-light-lg hover:shadow-light-xl"
               >
                 Subscribe
               </motion.button>
-            </div>
+              <input type="hidden" name="_subject" value="New Pistah newsletter signup" />
+              <input type="hidden" name="_captcha" value="false" />
+            </form>
           </div>
         </GlassCard>
       </motion.div>
@@ -257,7 +262,7 @@ export default function FooterClient() {
           </div>
           
           <div className="flex items-center space-x-4 text-sm text-slate-500 font-medium">
-            <span>🌍 Available in 20+ countries</span>
+            <span>🌍 Available in 190+ countries</span>
             <span>•</span>
             <span>🏆 4.9/5 rating</span>
             <span>•</span>
